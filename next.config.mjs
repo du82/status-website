@@ -1,39 +1,69 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable import/default */
 
+// For "Build dependencies behind this expression are ignored and might cause incorrect cache invalidation." warning
+// @see https://github.com/contentlayerdev/contentlayer/issues/129#issuecomment-1080416633
+
 import './src/config/env.server.mjs'
 import './src/config/env.client.mjs'
 
-import tamagui_next_plugin from '@tamagui/next-plugin'
+import tamaguiNextPlugin from '@tamagui/next-plugin'
+import { withContentlayer } from 'next-contentlayer'
 import { join } from 'node:path'
 
-const { withTamagui } = tamagui_next_plugin
+const { withTamagui } = tamaguiNextPlugin
 
 /** @type {import('next').NextConfig} */
 let config = {
   // output: 'export',
   reactStrictMode: true,
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+
+  // runs on the root level
   typescript: {
     ignoreBuildErrors: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     // disableStaticImages: true,
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@achingbrain/nat-port-mapper': false,
+      }
+    }
+
+    return config
   },
   transpilePackages: [
     // 'react-native',
     'react-native-web',
     // 'expo-modules-core',
     'expo-blur',
-    // '@status-im/components',
-    // '@status-im/js',
+    '@status-im/icons',
+    '@status-im/components',
+    '@status-im/js',
+    // '@achingbrain/nat-port-mapper',
+    // 'js-waku',
+    // 'libp2p',
   ],
   experimental: {
     legacyBrowsers: false,
-    // esmExternals: 'loose',
+    // todo?: remove; works without it
+    esmExternals: 'loose',
+    // esmExternals: false,
+    // esmExternals: true,
+    scrollRestoration: true,
   },
 }
 
 const plugins = [
+  withContentlayer,
   withTamagui({
     config: './tamagui.config.ts',
     components: [
@@ -61,6 +91,7 @@ const plugins = [
       'Modal',
     ],
   }),
+  // withMDX,
 ]
 
 export default () => {

@@ -1,10 +1,9 @@
-import { Calendar } from '@status-im/components/src/calendar/calendar'
-import { Popover } from '@status-im/components/src/popover'
+import { Calendar, Popover } from '@status-im/components'
 import { EditIcon } from '@status-im/icons'
 
 import { formatDate } from '../chart/utils/format-time'
 
-import type { DateRange } from '@status-im/components/src/calendar/calendar'
+import type { DateRange } from '@status-im/components'
 
 type Props = {
   selected?: DateRange
