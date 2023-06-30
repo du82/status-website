@@ -123,7 +123,7 @@ const ReposPage: Page = () => {
 }
 
 ReposPage.getLayout = function getLayout(page) {
-  return <InsightsLayout>{page}</InsightsLayout>
+  return <InsightsLayout links={[]}>{page}</InsightsLayout>
 }
 
 export default ReposPage

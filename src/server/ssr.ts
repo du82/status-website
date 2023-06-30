@@ -2,6 +2,8 @@ import type {
   decodeChannelURLData,
   decodeCommunityURLData,
   decodeUserURLData,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@status-im/js/encode-url-data'
 import type { GetServerSideProps } from 'next'
 import type { ParsedUrlQuery } from 'querystring'

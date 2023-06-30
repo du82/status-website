@@ -14,13 +14,14 @@
       "@assets/*": ["./public/assets/*"],
       "@images/*": ["./public/images/*"],
       "@docs": ["./.contentlayer/generated"]
+      // "@status-im/js/encode-url-data": ["./node_modules/status-js/src/utils"]
       // "@status-im/js/encode-url-data": [
       //   "../../packages/status-js/src/utils/encode-url-data"
       // ],
       // "@status-im/js/encode-url-hash": [
       //   "../../packages/status-js/src/utils/encode-url-hash"
       // ]
-      // "@status-im/js": ["./node_modules/@status-im/js/dist"],
+      // "@status-im/js": ["./node_modules/@status-im/js/dist"]
       // "@status-im/components": ["./node_modules/@status-im/components/dist"]
     }
   },

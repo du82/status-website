@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { decodeCommunityURLData } from '@status-im/js/encode-url-data'
 
 import { PreviewPage } from '@/components/preview-page'

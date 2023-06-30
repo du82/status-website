@@ -1,8 +1,11 @@
 import { Calendar, Popover } from '@status-im/components'
 import { EditIcon } from '@status-im/icons'
+import { addDays } from 'date-fns'
 
 import { formatDate } from '../chart/utils/format-time'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import type { DateRange } from '@status-im/components'
 
 type Props = {
@@ -34,6 +37,7 @@ const DatePicker = (props: Props) => {
             selected={selected}
             onSelect={onSelect}
             fixedWeeks
+            disabled={{ from: addDays(new Date(), 1) }}
           />
         </Popover.Content>
       </Popover>

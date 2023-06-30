@@ -7,7 +7,7 @@ const Empty = () => {
     <div className="flex h-full w-full flex-col items-center justify-center">
       <div className="relative flex h-full w-full items-center justify-center">
         <div className="relative z-10 flex flex-col items-center justify-center">
-          <Image src={'/assets/chart/empty.png'} width={80} height={80} />
+          <Image src="/assets/chart/empty.png" width={80} height={80} />
           <div className="pb-3" />
           <Text size={15} weight="semibold">
             No results found
@@ -17,7 +17,7 @@ const Empty = () => {
             Try adjusting your search or filter to find what you’re looking for.
           </Text>
         </div>
-        <div className="left-50 absolute top-16 w-full opacity-60">
+        <div className="absolute left-[50%] top-16 w-full translate-x-[-50%] opacity-60">
           <LineA />
         </div>
         <div className="absolute left-0 top-28 w-full opacity-60">

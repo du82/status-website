@@ -19,6 +19,8 @@ import type {
   decodeChannelURLData,
   decodeCommunityURLData,
   decodeUserURLData,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@status-im/js/encode-url-data'
 
 export const useURLData = (
