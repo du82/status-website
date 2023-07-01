@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "figma.figma-vscode-extension",
+    "dbaeumer.vscode-eslint",
+    "bierner.github-markdown-preview",
+    "bierner.markdown-preview-github-styles",
+    "bierner.markdown-mermaid",
+    "davidanson.vscode-markdownlint",
+    "unifiedjs.vscode-mdx",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
