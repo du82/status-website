@@ -21,8 +21,6 @@
       // "@status-im/js/encode-url-hash": [
       //   "../../packages/status-js/src/utils/encode-url-hash"
       // ]
-      // "@status-im/js": ["./node_modules/@status-im/js/dist"]
-      // "@status-im/components": ["./node_modules/@status-im/components/dist"]
     }
   },
   "include": [
