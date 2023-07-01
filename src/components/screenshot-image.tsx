@@ -8,12 +8,12 @@ import type { StaticImageData } from 'next/image'
 type Props = {
   image: StaticImageData
   alt: string
-  color: 'yellow' | 'turquoise' | 'purple'
+  color: 'yellow' | 'turquoise' | 'purple' | 'orange'
 }
 
 const containerClassNames = cva(
   [
-    'relative flex max-h-[854px] w-[582px] max-w-[582px] justify-center overflow-hidden rounded-[40px] py-[65px]',
+    'relative flex max-h-[854px] w-max max-w-fit justify-center overflow-hidden rounded-[40px] p-5 xl:min-w-[582px] xl:px-[120px] xl:py-[65px]',
   ],
   {
     variants: {
@@ -21,6 +21,7 @@ const containerClassNames = cva(
         yellow: ['bg-customisation-yellow/10'],
         turquoise: ['bg-customisation-turquoise/10'],
         purple: ['bg-customisation-purple/10'],
+        orange: ['bg-customisation-orange/10'],
       },
     },
   }
@@ -31,9 +32,10 @@ const imageClassNames = cva(
   {
     variants: {
       color: {
-        yellow: ['border-customisation-yellow/5'],
-        turquoise: ['border-customisation-turquoise/5'],
-        purple: ['border-customisation-purple/5'],
+        yellow: ['border-customisation-yellow/10'],
+        turquoise: ['border-customisation-turquoise/10'],
+        purple: ['border-customisation-purple/10'],
+        orange: ['border-customisation-orange/10'],
       },
     },
   }
@@ -47,6 +49,7 @@ const borderContainerClassNames = cva(
         yellow: ['text-customisation-yellow/5'],
         turquoise: ['text-customisation-turquoise/5'],
         purple: ['text-customisation-purple/5'],
+        orange: ['text-customisation-orange/5'],
       },
     },
   }
@@ -60,7 +63,7 @@ export const ScreenshotImage = (props: Props) => {
       <div className={borderContainerClassNames({ color })}>
         <Border />
       </div>
-      <div className="absolute left-0 top-0 h-full w-full bg-[url('/assets/wallet/texture.png')] bg-contain bg-[left_top_0] bg-no-repeat" />
+      <div className=" absolute left-0 top-0 h-full w-full bg-[url('/assets/wallet/texture.png')] bg-contain bg-[left_top_0] bg-no-repeat" />
       <Image
         src={image}
         alt={props.alt}

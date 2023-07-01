@@ -1,3 +1,4 @@
+export { AccordionTitlesSection } from './accordion-titles-section'
 export { Breadcrumbs } from './breadcrumbs'
 export { EpicOverview } from './epic-overview'
 export { SidebarMenu } from './sidebar-menu'

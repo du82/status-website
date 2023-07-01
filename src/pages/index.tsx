@@ -2,6 +2,10 @@ import communitiesImage1 from '@assets/homepage/communities-01.png'
 // TODO: import communitiesImage2 from '@assets/homepage/communities-02.png'
 import communitiesImage3 from '@assets/homepage/communities-03.png'
 import communitiesImage4 from '@assets/homepage/communities-04.png'
+import accordionSectionImage1 from '@assets/homepage/home-accordion-01.png'
+import accordionSectionImage2 from '@assets/homepage/home-accordion-02.png'
+import accordionSectionImage3 from '@assets/homepage/home-accordion-03.png'
+import accordionSectionImage4 from '@assets/homepage/home-accordion-04.png'
 import illustrationDark1 from '@assets/homepage/illustration-dark-01.png'
 import illustrationDark2 from '@assets/homepage/illustration-dark-02.png'
 import keycardImage from '@assets/homepage/illustration-keycard.png'
@@ -20,7 +24,9 @@ import { cx } from 'class-variance-authority'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
+import { AccordionTitlesSection } from '@/components'
 import { ParalaxCircle } from '@/components/parallax-circle'
+import { illustrations } from '@/config/illustrations'
 import { ROUTES } from '@/config/routes'
 import { stickers } from '@/config/stickers'
 import { AppLayout, Content } from '@/layouts/app-layout'
@@ -287,6 +293,43 @@ const HomePage: Page = () => {
             right={-338}
           />
         </FeatureSection>
+
+        <AccordionTitlesSection
+          items={[
+            {
+              title: 'Jump between tasks',
+              description:
+                'Like an operating system, whatever you’ve recently been doing is just a few taps away. Go from chatting with a friend to a wallet account without having to navigate your way back.',
+              backgroundColor: 'turquoise',
+              image: accordionSectionImage1,
+              icon: illustrations.frog.src,
+            },
+            {
+              title: 'Track your notifications',
+              description:
+                "With communities, 1on1 chats, wallet accounts and dApps, there is a lot going on! Stay in control with a global notification centre that lets you see at a glance everything that's happening in your Web3 world.",
+              backgroundColor: 'orange',
+              image: accordionSectionImage2,
+              icon: illustrations.bell.src,
+            },
+            {
+              title: 'Make it your own',
+              description:
+                'Customise your Status! Pick an avatar and colour to represent yourself, choose from light or dark mode, pick emoji to represent your accounts, and see the app will take on the character of the communities you join.',
+              backgroundColor: 'purple',
+              image: accordionSectionImage3,
+              icon: illustrations.wand.src,
+            },
+            {
+              title: 'Use multiple profiles',
+              description:
+                'Different online identities? Or sharing a device with family or friends? Not a problem, Status fully supports switching between multiple fully independent identities.',
+              backgroundColor: 'yellow',
+              image: accordionSectionImage4,
+              icon: illustrations.monopoly.src,
+            },
+          ]}
+        />
 
         <div className="relative grid grid-cols-2 items-center gap-[140px] overflow-hidden">
           <Image

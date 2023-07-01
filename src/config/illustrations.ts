@@ -1,10 +1,13 @@
+import bell from '@images/illustrations/bell.png'
 import cog from '@images/illustrations/cog.png'
 import doge from '@images/illustrations/doge.png'
 import duck from '@images/illustrations/duck.png'
 import flower from '@images/illustrations/flower.png'
+import frog from '@images/illustrations/frog.png'
 import hand from '@images/illustrations/hand.png'
 import lock from '@images/illustrations/lock.png'
 import megaphone from '@images/illustrations/megaphone.png'
+import monopoly from '@images/illustrations/monopoly.png'
 import mushroom from '@images/illustrations/mushroom.png'
 import nft from '@images/illustrations/nft-frame.png'
 import pizza from '@images/illustrations/pizza.png'
@@ -12,6 +15,7 @@ import rubik from '@images/illustrations/rubik-cube.png'
 import skull from '@images/illustrations/skull.png'
 import triangle from '@images/illustrations/triangle.png'
 import ufo from '@images/illustrations/ufo.png'
+import wand from '@images/illustrations/wand.png'
 
 export type Illustration = keyof typeof illustrations
 
@@ -97,6 +101,30 @@ export const illustrations = {
   mushroom: {
     src: mushroom,
     alt: 'Mushroom',
+    width: 48,
+    height: 48,
+  },
+  frog: {
+    src: frog,
+    alt: 'frog',
+    width: 48,
+    height: 48,
+  },
+  bell: {
+    src: bell,
+    alt: 'bell',
+    width: 48,
+    height: 48,
+  },
+  wand: {
+    src: wand,
+    alt: 'wand',
+    width: 48,
+    height: 48,
+  },
+  monopoly: {
+    src: monopoly,
+    alt: 'monopoly',
     width: 48,
     height: 48,
   },
