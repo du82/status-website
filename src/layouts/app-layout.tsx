@@ -22,7 +22,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
   return (
     <>
       <FloatingMenu />
-      <div className="min-h-full w-full bg-neutral-100">
+      <div className="min-h-full w-full overflow-x-hidden bg-neutral-100">
         <NavDesktop />
         <NavMobile />
 

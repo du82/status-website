@@ -19,7 +19,7 @@ const NavMobile = () => {
   }
 
   return (
-    <div className="z-10 flex flex-col items-center justify-between px-5 py-3 pb-1 md-lg:hidden">
+    <div className="z-20 flex flex-col items-center justify-between px-5 py-3 pb-1 md-lg:hidden">
       <div className="z-10 flex w-full items-center justify-between">
         <div className="flex">
           <Link href="/">

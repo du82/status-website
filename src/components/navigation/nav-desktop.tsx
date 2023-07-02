@@ -11,7 +11,7 @@ import { Link } from '../link'
 const NavDesktop = () => {
   return (
     <>
-      <NavigationMenu.Root className="relative z-10 hidden md-lg:block">
+      <NavigationMenu.Root className="relative z-20 hidden md-lg:block">
         <div className="flex items-center px-6">
           <div className="mr-5 flex shrink-0 ">
             <Link href="/">

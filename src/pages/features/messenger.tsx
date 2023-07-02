@@ -44,6 +44,9 @@ const MessengerPage: Page = () => {
           <VideoSection
             title="Fully Decentralized Messaging"
             description="Status’ Waku p2p messaging network is powered by people running Status Desktop - true decentralisation."
+            poster="/assets/messenger/notifications-preview.png"
+            videoMp4="/assets/messenger/notifications.mp4"
+            videoWebm="/assets/messenger/notifications.webm"
           />
 
           <Section

@@ -12,11 +12,8 @@ import { Text } from '@status-im/components'
 import { Section } from '@/components/cards'
 import { Hero } from '@/components/hero'
 import { ParalaxCircle } from '@/components/parallax-circle'
-import {
-  ComparisionSection,
-  HandsSection,
-  VideoSection,
-} from '@/components/wallet'
+import { VideoSection } from '@/components/video-section'
+import { ComparisionSection, HandsSection } from '@/components/wallet'
 import { AppLayout, Content } from '@/layouts/app-layout'
 
 import type { Page } from 'next'
@@ -33,7 +30,16 @@ const WalletPage: Page = () => {
           color="yellow"
           maxWidth={570}
         />
-        <VideoSection />
+        <VideoSection
+          title=" Fully
+          Decentralized 
+          Networks"
+          description="Status supports blockchain networks that are fully committed to decentralization."
+          secondaryDescription="Currently supported networks"
+          videoMp4="/assets/wallet/vitalik-wallet.mp4"
+          videoWebm="/assets/wallet/vitalik-wallet.webm"
+          poster="/assets/wallet/vitalik-wallet-preview.png"
+        />
 
         <div className="pb-12 lg:pb-20">
           <ParalaxCircle

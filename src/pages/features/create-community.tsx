@@ -11,7 +11,6 @@ import heroImage1 from '@assets/create-community/hero-01.png'
 import heroImage2 from '@assets/create-community/hero-02.png'
 import heroImage3 from '@assets/create-community/hero-03.png'
 import heroImage4 from '@assets/create-community/hero-04.png'
-import illustrationMain from '@assets/create-community/illustration-main.png'
 import screenshot from '@assets/create-community/screenshot-01.png'
 import sectionImage1 from '@assets/create-community/section-01.png'
 import sectionImage2 from '@assets/create-community/section-02.png'
@@ -106,8 +105,11 @@ const CreateCommunityPage: Page = () => {
       <VideoSection
         title="Decentralized. Permissionless. Free."
         description="By using Status, your community can regain control of it’s destiny and data."
-        image={{ ...illustrationMain, width: 746, height: 707 }}
         dark
+        poster="/assets/create-community/community-owners-preview.png"
+        videoMp4="/assets/create-community/community-owners.mp4"
+        videoWebm="/assets/create-community/community-owners.webm"
+        hideToRight
       />
 
       <FeatureList list={FEATURE_LIST} dark />

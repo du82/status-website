@@ -6,6 +6,7 @@ type ParalaxProps = {
   right?: number
   bottom?: number
   color: string
+  zIndex?: number
 }
 
 const ParalaxCircle = (props: ParalaxProps) => {
@@ -20,6 +21,7 @@ const ParalaxCircle = (props: ParalaxProps) => {
         transform: 'translate3d(0, 0, 0)',
         ...position,
         // ...parallax,
+        zIndex: props.zIndex || 0,
       }}
       className={
         'pointer-events-none absolute z-[0] h-[676px] w-[676px] rounded-full opacity-10 blur-[250px] ' +

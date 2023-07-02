@@ -51,9 +51,10 @@ const FloatingMenu = (): JSX.Element => {
         ref={ref}
         style={{
           opacity: visible ? 1 : 0,
+          pointerEvents: visible ? 'auto' : 'none',
         }}
         className={cx([
-          'fixed left-1/2 top-1 z-10 flex -translate-x-1/2 flex-col items-center justify-between p-2 pb-0 lg:hidden',
+          'fixed left-1/2 top-1 z-10 flex -translate-x-1/2 flex-col items-center justify-between p-2 pb-0 md-lg:hidden',
           'rounded-2xl border border-neutral-80/5 bg-blur-neutral-80/80 backdrop-blur-md',
           ' w-[calc(100%-24px)]',
           ' opacity-0 transition-opacity data-[visible=true]:opacity-100',
@@ -65,9 +66,10 @@ const FloatingMenu = (): JSX.Element => {
       <animated.div
         style={{
           opacity: visible ? 1 : 0,
+          pointerEvents: visible ? 'auto' : 'none',
         }}
         className={cx([
-          'fixed left-1/2 top-5 z-10 w-max min-w-[746px] -translate-x-1/2 overflow-hidden',
+          'fixed left-1/2 top-5 z-20 w-max min-w-[746px] -translate-x-1/2 overflow-hidden',
           'rounded-2xl border border-neutral-80/5 bg-blur-neutral-80/80 backdrop-blur-md',
           'hidden md-lg:block',
         ])}

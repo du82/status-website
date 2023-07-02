@@ -6,9 +6,6 @@ import accordionSectionImage1 from '@assets/homepage/home-accordion-01.png'
 import accordionSectionImage2 from '@assets/homepage/home-accordion-02.png'
 import accordionSectionImage3 from '@assets/homepage/home-accordion-03.png'
 import accordionSectionImage4 from '@assets/homepage/home-accordion-04.png'
-import illustrationDark1 from '@assets/homepage/illustration-dark-01.png'
-import illustrationDark2 from '@assets/homepage/illustration-dark-02.png'
-import keycardImage from '@assets/homepage/illustration-keycard.png'
 // import TODO messengerImage1 from '@assets/homepage/messenger-01.png'
 import messengerImage2 from '@assets/homepage/messenger-02.png'
 import messengerImage3 from '@assets/homepage/messenger-03.png'
@@ -19,12 +16,12 @@ import walletImage2 from '@assets/homepage/wallet-02.png'
 import walletImage3 from '@assets/homepage/wallet-03.png'
 import walletImage4 from '@assets/homepage/wallet-04.png'
 import { Button, Tag, Text } from '@status-im/components'
-import { ConfettiIcon } from '@status-im/icons'
+import { ChevronRightIcon, ConfettiIcon } from '@status-im/icons'
 import { cx } from 'class-variance-authority'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-import { AccordionTitlesSection } from '@/components'
+import { AccordionTitlesSection, Video } from '@/components'
 import { ParalaxCircle } from '@/components/parallax-circle'
 import { illustrations } from '@/config/illustrations'
 import { ROUTES } from '@/config/routes'
@@ -40,98 +37,122 @@ const HomePage: Page = () => {
   return (
     <>
       <Content>
-        <div className="relative overflow-hidden p-40">
-          <div className="grid gap-8">
-            <div className="grid max-w-[582px] gap-6">
-              <h1 className="text-88">
-                Make the
-                <br />
-                jump to web3
-              </h1>
+        <div className="relative flex w-full justify-center bg-white-100">
+          <div className="relative w-full items-center justify-center">
+            <ParalaxCircle
+              color="bg-customisation-blue-50"
+              top={0}
+              left={-106}
+            />
+            <div className="relative mx-auto max-w-[1504px]">
+              <div className="p-40 pr-0">
+                <div className="grid max-w-[582px] gap-6">
+                  <div className="pointer-events-none inline-flex w-fit items-center gap-2 rounded-[56px] border border-neutral-80/10 px-[6px] py-1">
+                    <div
+                      style={{
+                        background:
+                          'linear-gradient(89deg, #F6B03C 25.05%, #FF33A3 84.36%)',
+                      }}
+                      className="flex h-[24px] w-[47px] items-center justify-center rounded-xl text-[13px] uppercase text-white-100"
+                    >
+                      <span className="font-semibold">New</span>
+                    </div>
+                    <Text size={15} color="$neutral-100" weight="medium">
+                      Check our new website
+                    </Text>
+                    <ChevronRightIcon size={16} color="$neutral-80-opa-40" />
+                  </div>
+                  <h1 className="text-88">
+                    Make the
+                    <br />
+                    jump to web3
+                  </h1>
 
-              <Text size={19}>
-                An open source, decentralized communication super app
-              </Text>
+                  <Text size={27}>
+                    Use the open source, decentralized crypto communication
+                    super app.
+                  </Text>
+                </div>
+
+                <div className="mt-8 flex max-w-[460px] items-center gap-5 rounded-l-2xl rounded-r-[20px] border border-dashed border-neutral-80/20 p-2">
+                  <Text size={13}>
+                    Betas for Mac, Windows, Linux
+                    <br />
+                    Alphas for iOS & Android
+                  </Text>
+                  <Button size={40} icon={<ConfettiIcon size={20} />}>
+                    Sign up for early access
+                  </Button>
+                </div>
+              </div>
+
+              <Video
+                poster="/assets/homepage/homepage-hero.png"
+                videoMp4="/assets/homepage/homepage-hero.mp4"
+                videoWebm="/assets/homepage/homepage-hero.webm"
+                className="pointer-events-none absolute right-0 top-0 z-10 "
+              />
             </div>
-
-            <div className="flex max-w-[460px] items-center gap-5 rounded-l-2xl rounded-r-[20px] border border-dashed border-neutral-80/20 p-2">
-              <Text size={13}>
-                Betas for Mac, Windows, Linux
-                <br />
-                Alphas for iOS & Android
-              </Text>
-              <Button size={40} icon={<ConfettiIcon size={20} />}>
-                Sign up for early access
-              </Button>
+            {/* COMMUNITIES */}
+            <div className="relative bg-white-100">
+              <FeatureSection
+                type="Communities"
+                title="Discover your community"
+                description="Find your tribe in the metaverse of truly free Status communities"
+                images={[
+                  {
+                    src: communitiesImage1,
+                    alt: '',
+                    label: 'Explore the universe of self-sovereign communities',
+                    align: 'bottom',
+                    width: 380,
+                  },
+                  // {src:communitiesImage2,alt:"", label:""},
+                  {
+                    src: communitiesImage3,
+                    alt: '',
+                    label: 'Decentralized and permissionless',
+                    align: 'top',
+                    half: true,
+                    width: 334,
+                  },
+                  {
+                    src: communitiesImage3,
+                    alt: '',
+                    label:
+                      'Access token gated channels. Become eligible for airdrops.',
+                    align: 'top',
+                    half: true,
+                    width: 334,
+                  },
+                  { src: communitiesImage4, alt: '', label: '', width: 334 },
+                ]}
+              >
+                <ParalaxCircle
+                  color="bg-customisation-turquoise-50"
+                  right={90}
+                  top={-110}
+                />
+              </FeatureSection>
             </div>
           </div>
-
-          <ParalaxCircle
-            color="bg-customisation-blue-50"
-            bottom={-194}
-            left={-106}
-          />
         </div>
-
-        {/* COMMUNITIES */}
-        <FeatureSection
-          type="Communities"
-          title="Discover your community"
-          description="Find your tribe in the metaverse of truly free Status communities"
-          images={[
-            {
-              src: communitiesImage1,
-              alt: '',
-              label: 'Explore the universe of self-sovereign communities',
-              align: 'bottom',
-              width: 380,
-            },
-            // {src:communitiesImage2,alt:"", label:""},
-            {
-              src: communitiesImage3,
-              alt: '',
-              label: 'Decentralized and permissionless',
-              align: 'top',
-              half: true,
-              width: 334,
-            },
-            {
-              src: communitiesImage3,
-              alt: '',
-              label:
-                'Access token gated channels. Become eligible for airdrops.',
-              align: 'top',
-              half: true,
-              width: 334,
-            },
-            { src: communitiesImage4, alt: '', label: '', width: 334 },
-          ]}
-        >
-          <ParalaxCircle
-            color="bg-customisation-turquoise-50"
-            right={90}
-            top={-110}
-          />
-        </FeatureSection>
       </Content>
 
       {/* DARK SECTION */}
-      <div className="relative z-0 flex h-[388px] flex-col items-center justify-center bg-neutral-100 py-20">
+      <div className="relative z-0 flex h-[388px] flex-col items-center justify-center  bg-neutral-100 py-20">
         {/* <Tag size={32} label="Create community" color="$turquoise-50-opa-20" /> */}
-
-        <Image
-          src={illustrationDark1}
-          alt=""
-          width={556}
-          height={436}
-          className="absolute left-0"
+        <Video
+          poster="/assets/homepage/control-left.png"
+          videoMp4="/assets/homepage/control-left.mp4"
+          videoWebm="/assets/homepage/control-left.webm"
+          className="absolute left-[-60px] h-[436px]"
         />
-        <Image
-          src={illustrationDark2}
-          alt=""
-          width={484}
-          height={436}
-          className="absolute right-0"
+        <Video
+          poster="/assets/homepage/liberty-right.png"
+          videoMp4="/assets/homepage/liberty-right.mp4"
+          videoWebm="/assets/homepage/liberty-right.webm"
+          className="absolute bottom-[-20px] right-[-120px] h-[436px]"
         />
         <div className="mb-8 text-center">
           <h2 className="text-40 text-white-100 lg:text-64">
@@ -141,7 +162,11 @@ const HomePage: Page = () => {
             Don’t give Discord or Telegram power over your community.
           </Text>
         </div>
-        <Button variant="outline">Set your community free</Button>
+        <Button variant="outline">
+          <Text size={15} color="$white-100">
+            Set your community free
+          </Text>
+        </Button>
       </div>
 
       <Content>
@@ -332,11 +357,10 @@ const HomePage: Page = () => {
         />
 
         <div className="relative grid grid-cols-2 items-center gap-[140px] overflow-hidden">
-          <Image
-            src={keycardImage}
-            alt="Hand holding a green keycard"
-            width={742}
-            height={720}
+          <Video
+            poster="/assets/homepage/keycard-preview.png"
+            videoMp4="/assets/homepage/keycard.mp4"
+            videoWebm="/assets/homepage/keycard.webm"
           />
           <div className="flex max-w-[462px] flex-col items-start gap-8">
             <div className="flex flex-col gap-5">

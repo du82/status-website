@@ -25,7 +25,9 @@ const FloatingDesktop = (props: Props) => {
       ])}
     >
       <div className="flex items-center p-2">
-        <Logo label={false} />
+        <Link href="/">
+          <Logo label={false} />
+        </Link>
         <NavigationMenu.List className="flex items-center pl-5">
           {Object.entries(ROUTES).map(([name, links]) => (
             <NavigationMenu.Item key={name}>

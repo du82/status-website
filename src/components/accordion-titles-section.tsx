@@ -35,7 +35,7 @@ const AccordionTitlesSection = (props: Props) => {
           type="single"
           value={value}
           onValueChange={val => setValue(val)}
-          className="flex flex-col gap-4"
+          className="flex min-h-[410px] flex-col gap-4"
         >
           {items?.map(item => {
             return (

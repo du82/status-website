@@ -45,7 +45,10 @@ const CommunitiesPage: Page = () => {
       <VideoSection
         title="Fully Decentralized Communities"
         description="Status’ Waku p2p messaging network is powered by people running Status Desktop - true decentralisation."
-        image={{ ...illustrationMain, width: 765, height: 725 }}
+        poster="/assets/communities/communities-preview.png"
+        videoMp4="/assets/communities/communities.mp4"
+        videoWebm="/assets/communities/communities.webm"
+        hideToRight
       />
       <div className="pb-12 lg:pb-20">
         <Section
