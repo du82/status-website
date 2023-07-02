@@ -67,10 +67,10 @@ const VideoSection = () => {
       <div className="relative right-[-5px] top-0 flex justify-center md:absolute">
         <video autoPlay loop muted playsInline>
           <source
-            src="/assets/wallet/vitalik.mp4"
+            src="/assets/wallet/vitalik-wallet.mp4"
             type="video/mp4;codecs=hvc1"
           />
-          <source src="/assets/wallet/vitalik.webm" type="video/webm" />
+          <source src="/assets/wallet/vitalik-wallet.webm" type="video/webm" />
         </video>
       </div>
     </div>
