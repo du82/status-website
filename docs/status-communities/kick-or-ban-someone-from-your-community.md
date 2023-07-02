@@ -9,9 +9,9 @@ Community owners can kick out or ban members who violate the community guideline
 
 In the case of minor offences or annoyances, consider kicking the offender. For major violations of the community guidelines or repeated offences, you can use the ban option. Use the ban option cautiously, as this action is irreversible.
 
-:::info
+<Admonition type="info">
 Banning or kicking a user on your Status contact list doesn't remove the contact. If you want to remove the user from your contact list, [remove the contact](../your-profile-and-preferences/remove-a-contact-from-status) or [block the user](../block-someone-in-status).
-:::
+</Admonition>
 
 ## What to expect
 

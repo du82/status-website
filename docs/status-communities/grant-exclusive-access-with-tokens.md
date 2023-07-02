@@ -24,18 +24,18 @@ You start minting the community tokens you need to organize the event. In this p
 - A general-access token for attendees.
 - A VIP-access token only for speakers.
 
-:::info
+<Admonition type="info">
 Currently, you can only mint collectibles.
-:::
+</Admonition>
 
 - [x] [Mint a new collectible](./mint-tokens-for-your-community) to grant general access to the event attendees.
 - [x] Customize the general-access [collectible options](./mint-tokens-for-your-community#set-up-collectible-options). For example, you may want to turn on `Unlimited supply` and turn off the `Not transferable (Soulbound)` option.
 - [x] [Mint a collectible](./mint-tokens-for-your-community) to grant exclusive access to the event speakers.
 - [x] Configure the VIP-access [collectible options](./mint-tokens-for-your-community#set-up-collectible-options). In this case, you may want to turn off `Ulimited supply` and turn on the `Not transferable (Soulbound)` and `Remote self-destruct` options.
 
-:::info
+<Admonition type="info">
 You can't change the collectible description or options after minting.
-:::
+</Admonition>
 
 ### Step 2: create the token-based permissions
 
@@ -55,9 +55,9 @@ You may want to configure these permissions as follows:
 |                 |                        | `Is allowed to` | :desktop-member: Become member       |
 |                 |                        | `In`            | Your exclusive speakers-only channel |
 
-:::tip
+<Admonition type="tip">
 You can also set up exclusive access to communities or channels for holders of a particular ENS domain (for example, alice.acme.eth or bob.acme.eth).
-:::
+</Admonition>
 
 ### Step 3: distribute tokens to attendees and speakers
 

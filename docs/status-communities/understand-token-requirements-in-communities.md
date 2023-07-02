@@ -11,17 +11,17 @@ For example, a community owner can set up owning 10 SNT as a requirement to join
 
 There are three kinds of tokens in the Status app: assets, collectibles and ENS (Ethereum Name Service) names. Community owners can set up any combination of these tokens as a requirement to join their communities.
 
-:::info
+<Admonition type="info">
 When you join a private community, the token or tokens required to join are not transferred to anyone. They are used for verification purposes only, and they remain in your possession and wallet.
-:::
+</Admonition>
 
 ## If you meet the requirements
 
 Before you join a private community, the Status app automatically checks if you meet the community requirements. If you meet the requirements, the option to join the community is available.
 
-:::info
+<Admonition type="info">
 If the community owner has set [manual approval](./manage-community-join-requests) option for their community, you still need the owner's approval to join.
-:::
+</Admonition>
 
 ## If you don't meet the token requirements
 

@@ -7,9 +7,9 @@ title: Log out of Status
 
 When you decide not to use Status on the current device, you can log out to keep your profile secure. Status logs you out automatically after some app updates or when you uninstall the app.
 
-:::warn
+<Admonition type="warn">
 If you log out without [backing up the recovery phrase](./back-up-and-secure-your-recovery-phrase) and saving your password, you can't access your Status profile or the associated data and funds again. Keep the password and the recovery phrase in a safe place. Status can't recover or reset them for you.
-:::
+</Admonition>
 
 ## Log out of Status
 
@@ -27,6 +27,6 @@ If you log out without [backing up the recovery phrase](./back-up-and-secure-you
     1. In the **Settings** sidebar, scroll down to the bottom.
     1. Click **Sign out & Quit**.
 
-:::info
+<Admonition type="info">
 To prevent data and funds loss, you can't log out of your account until you [back up your recovery phrase](./back-up-and-secure-your-recovery-phrase).
-:::
+</Admonition>

@@ -9,6 +9,6 @@ To transfer your crypto to your Status Wallet from an exchange or another wallet
 
 For more details, check out [Receive crypto](./receive-crypto).
 
-:::info
+<Admonition type="info">
 If you want to send crypto to someone else from your Status Wallet, check out [Send crypto to someone](./send-crypto).
-:::
+</Admonition>

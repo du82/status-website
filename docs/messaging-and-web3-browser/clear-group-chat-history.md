@@ -9,15 +9,15 @@ Clearing a group chat history clears all messages inside the chat. Only the grou
 
 If you’re not the owner, you’ll clear the chat history just for yourself. Everyone else will still see the full history.
 
-:::info
+<Admonition type="info">
 Once you clear the chat history, it can't be retrieved or restored.
-:::
+</Admonition>
 
 ## Clear group chat history
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: Messages.
+    1. From the tab bar, tap <MessagesIcon /> Messages.
     2. Open the group chat whose history you want to clear.
     3. Tap :mobile-more-options: **More options**.
     4. Select :mobile-placeholder: **Clear history**.

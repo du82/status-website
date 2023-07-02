@@ -13,7 +13,7 @@ If you remove someone by mistake or change your mind about them later, you can a
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: Messages.
+    1. From the tab bar, tap <MessagesIcon /> Messages.
     2. Open the group chat you want to remove members from.
     3. Tap the member list underneath the chat's name.
     4. Tap :mobile-more-options: **More options** next to the member you want to remove.

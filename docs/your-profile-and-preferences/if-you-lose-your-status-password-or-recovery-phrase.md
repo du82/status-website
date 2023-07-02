@@ -7,9 +7,9 @@ title: If you lose your Status password or recovery phrase
 
 When you lose access to your Status password or recovery phrase, you may lose access to your Status data and wallet funds. Status can't recover your data or wallet funds for you due to its [decentralized architecture](../getting-started/what-is-status). It's your responsibility to keep your password and recovery phrase safe.
 
-:::info
+<Admonition type="info">
 If you have your recovery phrase, your wallet funds are safe. In this case, [restore your Status profile](../getting-started/create-or-restore-your-status-profile-using-a-recovery-phrase) using your recovery phrase.
-:::
+</Admonition>
 
 Depending on your circumstances, you may be able to recover your Status data and wallet funds. Select the option that describes your situation:
 
@@ -21,9 +21,9 @@ Depending on your circumstances, you may be able to recover your Status data and
 
 Use your recovery phrase to access your wallet funds if you can't sign in due to a lost password, [Keycard](../about-keycard) or biometrics setup. Visit [Create or restore your Status profile using a recovery phrase](../getting-started/create-or-restore-your-status-profile-using-a-recovery-phrase) for instructions.
 
-:::warn
+<Admonition type="warn">
 Status doesn't know your password and can't reset it for you. If you forget your password, you may lose access to your Status profile.
-:::
+</Admonition>
 
 ## If you lose your recovery phrase but know your Status password
 
@@ -38,17 +38,17 @@ Follow these steps:
 1. [Log out](./log-out-of-status) of your new profile and sign in to the profile where you lost your recovery phrase.
 1. From the Status profile where you lost your recovery phrase, [send all your wallet funds](../status-wallet/send-crypto) to the new wallet address.
 
-:::warn
+<Admonition type="warn">
 Status can't see your recovery phrase or recover it for you. [Keep your recovery phrase safe](./back-up-and-secure-your-recovery-phrase), and never share this information with anyone.
-:::
+</Admonition>
 
 ## If you lose your recovery phrase and Status password
 
 If lose your recovery phrase and can't sign in to your Status profile due to a lost password, [Keycard](../about-keycard) or biometrics setup, you lose access to your Status data and wallet funds forever.
 
-:::warn
+<Admonition type="warn">
 Status can't see or access your password or recovery phrase. If you lose them or forget them, Status can't recover or replace them.
-:::
+</Admonition>
 
 In this situation, if you're still signed in to your Status profile, you may be able to save the wallet funds by sending them to a different wallet address.
 

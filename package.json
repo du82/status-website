@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "contentlayer build && tsc",
-    "clean": "rimraf .next .tamagui .vercel/output node_modules",
+    "clean": "rimraf .next .tamagui .vercel/output node_modules .contentlayer",
     "preview": "next start --port 8151",
     "codegen": "graphql-codegen -r dotenv/config --config codegen.yml",
     "codegen:watch": "yarn run codegen -- --watch"

@@ -7,6 +7,6 @@ title: Join a Status Community
 
 :octicons-tools-24:
 
-:::info
+<Admonition type="info">
 We're working on this content.
-:::
+</Admonition>

@@ -9,23 +9,23 @@ Your Status keys are essential in securing and authenticating your communication
 
 Using cryptographic keys, Status gives you complete control over your data. You don't need any personally identifiable information (like your email or phone number) to [create a Status profile](../getting-started/run-the-status-app-for-the-first-time), and your information is never shared or stored with third parties.
 
-:::tip
+<Admonition type="tip">
 For common questions about your Status keys and recovery phrase, check out [FAQ: Status keys and recovery phrase](./faq-status-keys-and-recovery-phrase).
-:::
+</Admonition>
 
 ## About your Status keys
 
 When you [create a new Status profile](../getting-started/run-the-status-app-for-the-first-time), the Status app generates a public and a private cryptographic key (a key pair). In essence, these keys are large strings of characters securely stored on your device and protected by your Status password.
 
-:::warn
+<Admonition type="warn">
 Status doesn't know your password and can't reset it for you. If [you forget your password](../if-you-lose-your-password-or-recovery-phrase), you may lose access to your Status profile and wallet funds. Remember your Status password, keep it in a safe place, and don't share it with anyone.
-:::
+</Admonition>
 
 The Status app uses your private key to sign and encrypt your messages, making sure that only the intended recipient can read them and that no one can tamper with them. You should never share your private key.
 
-:::info
+<Admonition type="info">
 You can regenerate your private key on a different device using your [recovery phrase](#about-your-recovery-phrase).
-:::
+</Admonition>
 
 Your public key is paired with your private key and identifies your Status profile and [Status wallet](../status-wallet/status-wallet-your-quick-start-guide) address. For this reason, you can freely share your public key without worry. While anyone can send you a message or a crypto transaction to your public key, you need your private key to confirm you're the intended recipient.
 
@@ -37,9 +37,9 @@ A recovery phrase (also known as a seed phrase or backup phrase) is a set of wor
 
 Because your recovery phrase can be used to regenerate your private key, you must keep your recovery phrase words always secure.
 
-:::warn
+<Admonition type="warn">
 [If you lose your recovery phrase](../if-you-lose-your-password-or-recovery-phrase), you lose access to your data and wallet funds. Keep your recovery phrase safe, and never share this information with anyone. Status will never ask you for this information.
-:::
+</Admonition>
 
 ## Status chat key and wallet address
 

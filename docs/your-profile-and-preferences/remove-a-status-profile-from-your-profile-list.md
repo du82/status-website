@@ -7,9 +7,9 @@ title: Remove a Status profile from your profile list
 
 If you don't want a profile to show up on your device, you can remove it.
 
-:::info
+<Admonition type="info">
 A profile removed from your device is not deleted. Check out [Delete your Status profile](./delete-your-status-profile).
-:::
+</Admonition>
 
 ## What to expect
 
@@ -35,6 +35,6 @@ A profile removed from your device is not deleted. Check out [Delete your Status
     1. Click :desktop-delete: **Remove** next to the profile to remove.
     1. Click **Remove Profile** to confirm.
 
-:::info
+<Admonition type="info">
 Within 30 days, you can [restore this profile](../getting-started/create-or-restore-your-status-profile-using-a-recovery-phrase) if you want to use it again.
-:::
+</Admonition>

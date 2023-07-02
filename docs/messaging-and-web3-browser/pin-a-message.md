@@ -15,7 +15,7 @@ Once you pin a message, it's highlighted and gets a label saying who pinned it.
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: Messages.
+    1. From the tab bar, tap <MessagesIcon /> Messages.
     2. Open the chat you want to pin a message in.
     3. Tap the message you want to pin.
     4. Tap :mobile-pin: **Pin to the chat**.

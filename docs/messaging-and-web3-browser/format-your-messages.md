@@ -5,9 +5,9 @@ language: en
 title: Format your messages
 ---
 
-:::info
+<Admonition type="info">
 The formatting options are not available on Status Web.
-:::
+</Admonition>
 
 You can format text inside your messages to clarify or emphasize information. Formatting can make your communication more effective, especially for long messages.
 
@@ -19,9 +19,9 @@ To format your text using the formatting toolbar, select the text and choose the
 
 ![Select and format your text using the formatting toolbar.](/assets/help/messaging-and-web3-browser/format-your-messages/213-0-1.png)
 
-:::tip
+<Admonition type="tip">
 When you press ++return++ in Status desktop, your message is sent. If you want to start a new line, press ++shift+return++
-:::
+</Admonition>
 
 ## Markup
 

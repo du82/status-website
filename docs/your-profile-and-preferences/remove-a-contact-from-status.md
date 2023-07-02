@@ -13,15 +13,15 @@ You can remove any contact from your Status contact list. In Status, you need to
 - After you remove a contact, your direct messages with them remain. To delete these messages, [delete the chat](../messaging-and-web3-browser/delete-a-chat-with-someone).
 - A user not on your contact list can still see your profile and send you a contact request. To prevent this, you can [block the user](../block-someone-in-status).
 
-:::info
+<Admonition type="info">
 Status doesn't access or use your phone's contact list. When you remove a contact from Status who is also on your phone's contact list, that person stays on your list.
-:::
+</Admonition>
 
 ## Remove a contact
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: **Messages**.
+    1. From the tab bar, tap <MessagesIcon /> **Messages**.
     1. Tap **Contacts**.
     1. In your contact list, search for the contact you want to remove.
     1. Tap :mobile-more-options: **More options** next to the contact.

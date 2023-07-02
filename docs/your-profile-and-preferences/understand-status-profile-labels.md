@@ -11,9 +11,9 @@ Identity verification and profile labels help you keep in mind whether you shoul
 
 For example, if you're managing a corporate community and someone requests to join claiming to be an employee, you can try [verifying their identity](./verify-your-contacts-identity). If they fail to pass, you can mark them as untrusted but keep them in your contacts to understand who was trying to impersonate an employee and infiltrate your company's private community.
 
-:::info
+<Admonition type="info">
 To see a label on someone's profile, [mark this profile as trusted or untrusted](./verify-your-contacts-identity).
-:::
+</Admonition>
 
 ## The basics
 

@@ -5,22 +5,22 @@ language: en
 title: Restore your Status Community
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only restore your community using [Status desktop](../getting-started/#download-status).
-:::
+</Admonition>
 
 If you lose access to the computer where you run your Status Community, you can restore the community onto another device using the community's private key. This process creates a new community node.
 
-:::info
+<Admonition type="info">
 You can also use the community's private key to [transfer the community's ownership](./transfer-your-community-s-ownership).
-:::
+</Admonition>
 
 The community's private key is a large string of characters stored in the Status app and protected by your Status password. Anyone with access to this key may become the community owner and control its settings, permissions and membership approvals.
 
-:::warn
+<Admonition type="warn">
 Manually transferring your community from one computer to another by copying the private key is an insecure method of handling a private key. Still, it's currently the only way to do so.<br/>
 We're aware of this issue and plan to implement a secure solution in a future release. In the meantime, be extra cautious when handling your community key and keep it safe.
-:::
+</Admonition>
 
 ## What to expect
 
@@ -39,6 +39,6 @@ To restore your Status Community, you need to back up your private community key
     1. Enter your community's private key in the **Community key** field.
     1. Click **Import**. If the **Import** option is unavailable, verify you're entering the correct key.
 
-:::info
+<Admonition type="info">
 Status will never ask you for the community's private key, and anyone who does is trying to steal your community.
-:::
+</Admonition>

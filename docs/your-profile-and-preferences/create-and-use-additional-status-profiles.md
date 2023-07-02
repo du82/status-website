@@ -9,9 +9,9 @@ Using your Status profile, you can access and use the different Status app featu
 
 You can create multiple profiles for different purposes. For example, you may want to use different profiles for work, social activities and connecting with families.
 
-:::info
+<Admonition type="info">
 If you want to remove a profile, read [Remove a Status profile](../remove-a-status-profile).
-:::
+</Admonition>
 
 ## Create an additional profile
 
@@ -33,9 +33,9 @@ To create an additional profile, you follow a similar process to creating your f
     1. Click **Generate new keys**.
     1. Read [Create a new Status profile](../getting-started/run-the-status-app-for-the-first-time#new-profile) and follow the instructions described in step 2.
 
-:::info
+<Admonition type="info">
 If you want to create a profile using your Keycard, read [Create or restore your Status profile using Keycard](./create-or-restore-your-status-profile-using-keycard).
-:::
+</Admonition>
 
 ## Add an existing profile
 
@@ -52,9 +52,9 @@ If you have another Status profile you can add it to your device. For example, y
     1. Open the Status app. Click **Cancel** if you're prompted to sign in.
     1. Click :desktop-chevron-down: **Arrow** and then click **Add existing Status user** to sign in.
 
-:::info
+<Admonition type="info">
 If you want to add an existing Status profile using its recovery phrase, read [Create or restore your Status profile using a recovery phrase](../getting-started/create-or-restore-your-status-profile-using-a-recovery-phrase). If you want to add an existing Status profile using your Keycard, read [Create or restore your Status profile using Keycard](./create-or-restore-your-status-profile-using-keycard).
-:::
+</Admonition>
 
 ## Switch profiles
 

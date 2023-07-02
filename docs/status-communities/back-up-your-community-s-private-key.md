@@ -5,18 +5,18 @@ language: en
 title: Back up your community's private key
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only back up your community key using [Status desktop](../getting-started/#download-status).
-:::
+</Admonition>
 
 When you create a [Status Community](./about-status-communities), the Status app generates a public and a private cryptographic key (a key pair). In essence, these keys are very large numbers securely stored on your device and protected by your Status password.
 
 The community's private key provides control over your community's settings, membership approvals and other important aspects of its operation. Use your community's private key backup to [restore the community](./restore-your-status-community) onto another device or to [transfer your community's ownership](./transfer-your-community-s-ownership) to someone else.
 
-:::warn
+<Admonition type="warn">
 Manually transferring your community from one computer to another by copying the private key is an insecure method of handling a private key. Still, it's currently the only way to do so.
 We're aware of this issue and plan to implement a secure solution in a future release. In the meantime, be extra cautious when handling your community key and keep it safe.
-:::
+</Admonition>
 
 ## What to expect
 
@@ -35,9 +35,9 @@ We're aware of this issue and plan to implement a secure solution in a future re
     1. Close the window showing the key. You can access this information at any time.
     1. Paste the community's private key on a document or write it down on paper.
 
-:::info
+<Admonition type="info">
 Keep your community's private key safe. Status will never ask you for this information, and anyone who does is trying to steal your community.
-:::
+</Admonition>
 
 ## Common questions
 

@@ -5,17 +5,17 @@ language: en
 title: Mint tokens for your community
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only mint tokens using the Status desktop app. [:octicons-desktop-download-16: Download Status desktop](https://status.im/get).
-:::
+</Admonition>
 
 With Status, you can mint custom tokens as a community owner. You have complete control over your token creation and distribution.
 
 Your token's purpose and use are specific to your community. For example, you can reward your entire community or individual members with custom tokens, or offer [exclusive membership to token holders](./grant-exclusive-access-with-tokens). After minting your tokens, you can distribute them to community members and other users of Status via [airdrops](../how-to-airdrop-tokens-in-Status).
 
-:::info
+<Admonition type="info">
 Currently, you can only mint collectibles.
-:::
+</Admonition>
 
 When you mint a token, you create a new and unique digital asset in the blockchain network. The blockchain charges you a transaction fee for this process. Fore more details about blockchain fees, check out [Understand network fees](../status-wallet/understand-network-fees).
 
@@ -26,9 +26,9 @@ When you mint a token, you create a new and unique digital asset in the blockcha
 - In addition to the native Ethereum network (mainnet), Status supports the Optimism and Arbitrum [layer-2 scaling solutions](../getting-started/layer-2-scaling-solutions-for-ethereum) to mint tokens. These scaling solutions provide faster and cheaper transactions than mainnet.
 - If you [delete your community](./delete-your-status-community), you lose the metadata associated with your tokens, including the image and description.
 
-:::tip
+<Admonition type="tip">
 Minting a token is an on-chain transaction. The record of your token persists in the blockchain after you delete the community.
-:::
+</Admonition>
 
 ## Mint a collectible
 
@@ -42,9 +42,9 @@ Minting a token is an on-chain transaction. The record of your token persists in
     1. Click **Preview** to review your new token description and settings and then, click **Mint**.
     1. Review the transaction and fees and click :desktop-password: **Sign transaction**.
 
-:::info
+<Admonition type="info">
 You can't change the collectible description or options after minting.
-:::
+</Admonition>
 
 ## Set up collectible options
 

@@ -1,12 +1,20 @@
+import { Children, cloneElement, type ComponentProps } from 'react'
+
 import { allDocs } from '@docs'
-import { Avatar, Button, Text } from '@status-im/components'
-import { BulletIcon, CheckIcon, EditIcon } from '@status-im/icons'
+import { Avatar, Button, Counter, Tabs, Text } from '@status-im/components'
+import { BulletIcon, EditIcon } from '@status-im/icons'
+import * as icons from '@status-im/icons'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import {
+  // useLiveReload,
+  useMDXComponent,
+} from 'next-contentlayer/hooks'
+import { match } from 'ts-pattern'
 
 import { Admonition } from '@/components/admonition'
 import { Breadcrumbs } from '@/components/breadcrumbs'
+import * as desktopIcons from '@/components/icons/desktop'
 import { Link } from '@/components/link'
 import { SearchButton } from '@/components/search-button'
 import { SidebarMenu } from '@/components/sidebar-menu'
@@ -23,8 +31,9 @@ import type { InformationBoxProps } from '@/components/admonition'
 import type { BreadcrumbsProps } from '@/components/breadcrumbs'
 // import type { SidebarMenuProps } from '@/components/sidebar-menu'
 import type { Doc } from '@docs'
+import type { TabsProps } from '@status-im/components'
+import type { IconProps } from '@status-im/icons'
 import type { GetStaticPaths, GetStaticProps, Page } from 'next'
-import type { ComponentProps } from 'react'
 
 type Params = { slug: string[] }
 
@@ -215,6 +224,36 @@ const AnchorLink = ({
   </>
 )
 
+const iconComponents = Object.entries(icons).reduce((acc, [name, Icon]) => {
+  return {
+    ...acc,
+    [name]: (props: IconProps) => {
+      return (
+        <div className="-mb-1 inline-block">
+          <Icon {...props} size={20} />
+        </div>
+      )
+    },
+  }
+}, {})
+
+// note: icons generated without @status-im/icons#createIcon
+const desktopIconsComponents = Object.entries(desktopIcons).reduce(
+  (acc, [name, Icon]) => {
+    return {
+      ...acc,
+      [name]: (props: IconProps) => {
+        return (
+          <div className="-mb-1 inline-block">
+            <Icon {...props} color="red" width={20} height={20} />
+          </div>
+        )
+      },
+    }
+  },
+  {}
+)
+
 const components = {
   h1: (props: ComponentProps<'h1'>) => {
     return (
@@ -270,21 +309,28 @@ const components = {
     return <ul className="grid gap-y-3">{props.children}</ul>
   },
   ol: (props: ComponentProps<'ol'>) => {
-    // return <ol className="list-inside list-decimal" {...props} />
-    return <ol {...props} />
+    const listItems = Children.toArray(props.children).filter(
+      child => typeof child === 'object'
+      // child => Children.only(child)
+    )
+
+    return (
+      <ol className="grid gap-y-3" {...props}>
+        {Children.map(listItems, (item, index) =>
+          cloneElement(item, { order: index + 1, parent: 'ol' })
+        )}
+      </ol>
+    )
   },
   li: (props: ComponentProps<'li'>) => {
-    const icon =
-      props.className === 'task-list-item' ? (
-        <CheckIcon size={20} color="$success-50" aria-hidden />
-      ) : (
-        <BulletIcon size={20} color="$neutral-50" aria-hidden />
-      )
+    const icon = match(props.parent)
+      .with('ol', () => <Counter value={props.order} />)
+      .otherwise(() => <BulletIcon size={20} color="$neutral-50" aria-hidden />)
 
     return (
       <li className="flex items-center gap-2">
-        {icon}
-        {props.children}
+        <div className="shrink-0">{icon}</div>
+        <div>{props.children}</div>
       </li>
     )
   },
@@ -305,11 +351,33 @@ const components = {
   // ),
   // pre: Pre,
   // code: InlineCode,
-  Admonition: (props: InformationBoxProps) => (
-    <div className="my-5">
-      <Admonition {...props} />
-    </div>
-  ),
+  Admonition: (props: InformationBoxProps) => {
+    return (
+      <div className="my-5">
+        <Admonition {...props} />
+      </div>
+    )
+  },
+  Tabs: (props: TabsProps) => {
+    return <Tabs {...props} />
+  },
+  TabsContent: (props: any) => {
+    return <Tabs.Content {...props} />
+  },
+  TabsList: (props: any) => {
+    return (
+      <div className="mb-5">
+        <Tabs.List {...props} />
+      </div>
+    )
+  },
+  TabsTrigger: (props: any) => {
+    return (
+      <Tabs.Trigger {...props}>{props.children.props.children}</Tabs.Trigger>
+    )
+  },
+  ...iconComponents,
+  ...desktopIconsComponents,
 }
 
 export default DocsDetailPage

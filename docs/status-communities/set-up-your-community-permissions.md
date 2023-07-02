@@ -5,17 +5,17 @@ language: en
 title: Set up your community permissions
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only customize community permissions using Status desktop.
-:::
+</Admonition>
 
 In Status Communities, owners can customize community permissions using tokens. Tokens are digital assets in a blockchain (such as the [Ethereum blockchain](../getting-started/about-the-ethereum-blockchain)), including virtual coins, collectibles and domain names.
 
 Once you set up token-based permissions, certain actions within your community are only available to users who own a particular token. For instance, owners can [restrict access to their community](./set-up-a-private-community) or [delegate admin functions](./delegate-admin-functions-to-community-members) to specific token holders.
 
-:::info
+<Admonition type="info">
 In Status, your tokens are securely stored in your [Status Wallet](../status-wallet/status-wallet-your-quick-start-guide).
-:::
+</Admonition>
 
 ## What to expect
 

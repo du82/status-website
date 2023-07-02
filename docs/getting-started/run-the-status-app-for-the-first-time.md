@@ -28,7 +28,7 @@ If you want to create your profile from an existing recovery phrase, check out [
     ### Step 1: Generate new keys
 
     1. Open the Status app. Your operating system may ask you to set your notification preferences for Status. In the **Allow notifications** screen, click **OK, got it**.
-    1. Check the box to accept the Status **Terms of Use and Privacy Policy** and click **Get Started**. You can find and read this information on the [Status website :octicons-tab-external-16:](https://status.im).
+    1. Check the box to accept the Status **Terms of Use and Privacy Policy** and click **Get Started**. You can find and read this information on the [Status website <ExternalIcon />](https://status.im).
     1. On the welcome screen, click **I am new to Status**.
     1. Click **Generate new keys**.
 
@@ -42,9 +42,9 @@ If you want to create your profile from an existing recovery phrase, check out [
 
 To protect your Status data and funds, [back up and secure your recovery phrase](../your-profile-and-preferences/back-up-and-secure-your-recovery-phrase) immediately after creating your profile.
 
-:::warn
+<Admonition type="warn">
 Status doesn't know your password and can't reset it for you. If you forget your password, you may lose access to your Status profile and wallet funds. Remember your Status password, keep it in a safe place and don't share it with anyone.
-:::
+</Admonition>
 
 ## Customize your profile
 
@@ -53,7 +53,7 @@ Here you only fill out basic information. You can customize your Status profile 
 === "Mobile"
 
     1. On the **Create profile** screen, set your profile name. Don't use special characters or emojis.
-    1. Tap the :mobile-camera: **Camera** in your avatar and set a profile picture. To add your profile picture, you must authorize the Status app to access your camera or photo gallery.
+    1. Tap the <CameraIcon /> **Camera** in your avatar and set a profile picture. To add your profile picture, you must authorize the Status app to access your camera or photo gallery.
     1. Choose a profile colour.
     1. Tap **Continue** to complete your profile customization.
 

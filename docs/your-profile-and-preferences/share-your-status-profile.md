@@ -11,8 +11,8 @@ If someone wants to add you as a contact in Status, you need to share your profi
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: **Messages**.
-    1. From the top navigation, tap :mobile-qr-code: **QR code**.
+    1. From the tab bar, tap <MessagesIcon /> **Messages**.
+    1. From the top navigation, tap <QrCodeIcon /> **QR code**.
     1. Share your QR code or profile link with your future contact. You can also tap :mobile-share: **Share** to send your profile link to someone via SMS or a different app.
 
 === "Desktop"

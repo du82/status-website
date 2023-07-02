@@ -7,6 +7,6 @@ title: Configure your community permissions
 
 :octicons-tools-24:
 
-:::info
+<Admonition type="info">
 We're working on this content.
-:::
+</Admonition>

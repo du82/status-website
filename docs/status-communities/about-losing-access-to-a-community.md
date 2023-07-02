@@ -16,9 +16,9 @@ The community owner can permanently ban your account if you break the community 
 - When you lose access to a community, it does show up under the Joined tab on your [Communities page](./how-to-use-communities-your-quick-start-guide).
 - In the [notifications centre](../your-profile-and-preferences/view-notifications-and-updates), your Membership notifications show when you have lost access to a community. You don't receive a notification when you're banned from a community.
 
-:::info
+<Admonition type="info">
 Community owners control who has access to their communities. Status can't kick you out or ban you from a community. Likewise, Status can't grant you access to a community or override the community owner's actions.
-:::
+</Admonition>
 
 ## Reasons you can lose access to a community
 
@@ -31,6 +31,6 @@ There are four reasons:
 | Token requirements change | The token requirements to access the community have changed and your tokens do not longer satisfy these requirements. Open the community page to review the new token requirements. | Token-gated communities          |
 | Your tokens change        | Your tokens or token amounts have changed and you don't longer satisfy the community requirements. Open the community page to verify your eligibility.                              | Token-gated communities          |
 
-:::warn
+<Admonition type="warn">
 Community owners can lose access to their community if they have to restore the profile on a different device and don't [back up the community key](../backup-your-community-key).
-:::
+</Admonition>

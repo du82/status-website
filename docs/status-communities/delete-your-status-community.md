@@ -5,9 +5,9 @@ language: en
 title: Delete your Status Community
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only delete your community using Status desktop.
-:::
+</Admonition>
 
 Status uses a [peer-to-peer network](../messaging-and-web3-browser/about-status-messages#peer-to-peer-messaging) that temporarily stores data of your community. Because of this decentralized architecture, there is no one-click way to delete a community and all associated data.
 
@@ -16,9 +16,9 @@ Status uses a [peer-to-peer network](../messaging-and-web3-browser/about-status-
 - For a community to disappear, you must remove everyone from the community, including yourself, and make sure no activity happens for 30 days.
 - Community data recorded on the blockchain continues to exist. For example, if you [minted tokens for your community](./mint-tokens-for-your-community), the transaction is on-chain and persists in the blockchain.
 
-:::info
+<Admonition type="info">
 Your messages are not in the blockchain and are not transported through the Ethereum network. [Messages](../messaging-and-web3-browser/about-status-messages) are temporarily stored in the peer-to-peer network.
-:::
+</Admonition>
 
 ## Delete your Status Community
 

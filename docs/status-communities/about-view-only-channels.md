@@ -5,9 +5,9 @@ language: en
 title: About view-only channels
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only set up and manage view-only channels using Status desktop. [:octicons-desktop-download-16: Download Status desktop](https://status.im/get).
-:::
+</Admonition>
 
 [Channels](./channels-your-quick-start-guide) are spaces for conversation, discussion and information sharing. By default, all community members with access to a channel can read and send messages.
 
@@ -29,9 +29,9 @@ This is how the `View` and `View and post` channel permissions work in your comm
 
 (:material-check-all: view and post, :material-check: view only, :octicons-x-24: no access)
 
-:::tip
+<Admonition type="tip">
 Members with view-only access to the channel can still [react](../messaging-and-web3-browser/react-and-reply-to-messages) to messages in the channel with emojis.
-:::
+</Admonition>
 
 ## Using a view-only channel
 

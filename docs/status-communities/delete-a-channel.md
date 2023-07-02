@@ -5,15 +5,15 @@ language: en
 title: Delete a channel
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only delete a channel using Status desktop.
-:::
+</Admonition>
 
 Community owners can delete [channels](./channels-your-quick-start-guide) within their communities. As a community owner, when you delete a channel, all messages and files associated with that channel are also deleted.
 
-:::info
+<Admonition type="info">
 Once you delete a channel, it can't be retrieved or restored.
-:::
+</Admonition>
 
 ## What to expect
 

@@ -7,7 +7,7 @@ The Status desktop app is the best way to use Status on Linux. Take a look at th
 
 ## Step 1: Download the Linux app
 
-1. Visit [status.im/get :octicons-tab-external-16:](https://status.im/get)
+1. Visit [status.im/get <ExternalIcon />](https://status.im/get)
 1. Under the **Desktop** section, click the **Linux** button.
 1. Locate the file in your Downloads folder (the download file name begins with StatusIm-Desktop).
 1. Open Terminal and change the directory to your Downloads folder. Example:
@@ -22,9 +22,9 @@ The Status desktop app is the best way to use Status on Linux. Take a look at th
    tar xvf StatusIm-Desktop-*.tar.gz
    ```
 
-:::info
+<Admonition type="info">
 Replace the \* with the Status app version number. For example: `StatusIm-Desktop-v1.2.tar.gz`
-:::
+</Admonition>
 
 1. Optionally, [verify the Status app GPG signature](#verify-the-status-app-gpg-signature).
 1. To launch Status, go to the directory where you have the Status app and double click the AppImage file.
@@ -35,7 +35,7 @@ If this is the first time you run Status on your computer, check [Run the Status
 
 ## Verify the Status app GPG signature
 
-When you verify the GPG signature of the Status app, you confirm that the app has not been altered. To verify the GPG signature on Linux, you use Status app public key and the [GNU Privacy Guard (or GPG) :octicons-tab-external-16:](https://gnupg.org/) software that comes with most Linux distributions.
+When you verify the GPG signature of the Status app, you confirm that the app has not been altered. To verify the GPG signature on Linux, you use Status app public key and the [GNU Privacy Guard (or GPG) <ExternalIcon />](https://gnupg.org/) software that comes with most Linux distributions.
 
 1. Open Terminal and change to the directory with the Status AppImage file.
 1. Download and import the Status release public key:

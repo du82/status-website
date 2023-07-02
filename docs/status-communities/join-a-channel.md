@@ -11,7 +11,7 @@ All members of a [community](about-status-communities) can browse and join publi
 
 ## Join a public channel
 
-All members can join channels that don't have a :mobile-locked-lock: lock icon next to their names. When you join a community, you automatically get access to these channels.
+All members can join channels that don't have a <LockedIcon /> lock icon next to their names. When you join a community, you automatically get access to these channels.
 
 === "Mobile"
 
@@ -26,7 +26,7 @@ All members can join channels that don't have a :mobile-locked-lock: lock icon n
 
 ## Join a private channel
 
-Private channels have a :mobile-locked-lock: lock icon next to their names. To access these channels, you need to meet the token requirements. To maintain access, you need to keep holding the required tokens.
+Private channels have a <LockedIcon /> lock icon next to their names. To access these channels, you need to meet the token requirements. To maintain access, you need to keep holding the required tokens.
 
 === "Mobile"
 

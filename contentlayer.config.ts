@@ -14,7 +14,6 @@ import { remark } from 'remark'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 // import remarkMessageControl from 'remark-message-control'
-// import remarkAdmonitions from 'remark-github-beta-blockquote-admonitions'
 // import remarkBreaks from 'remark-breaks'
 import strip from 'strip-markdown'
 import { visit } from 'unist-util-visit'
@@ -134,40 +133,6 @@ function getPathSegments(filePath: string) {
   )
 }
 
-const remarkAdmonition: Plugin = () => {
-  return tree => {
-    visit(tree, node => {
-      if (
-        node.type === 'textDirective' ||
-        node.type === 'leafDirective' ||
-        node.type === 'containerDirective'
-      ) {
-        // @ts-expect-error TODO
-        if (!['info', 'tip', 'warn'].includes(node.name)) {
-          return
-        }
-
-        // Store node.name before overwritten with "Alert".
-        // @ts-expect-error TODO
-        const type = node.name
-
-        // const data = node.data || (node.data = {})
-        // const tagName = node.type === 'textDirective' ? 'span' : 'div'
-
-        node.type = 'mdxJsxFlowElement'
-        // @ts-expect-error TODO
-        node.name = 'Admonition'
-        // @ts-expect-error TODO
-        node.attributes = [
-          { type: 'mdxJsxAttribute', name: 'type', value: type },
-          // @ts-expect-error TODO
-          { type: 'mdxJsxAttribute', name: 'title', value: node.label },
-        ]
-      }
-    })
-  }
-}
-
 const remarkIndexer: Plugin = () => (root, file) => {
   file.data.index = indexer(root)
 }
@@ -198,7 +163,6 @@ export default makeSource({
     remarkPlugins: [
       remarkGfm,
       remarkDirective,
-      remarkAdmonition,
       // [remarkMessageControl, { name: 'hello' }],
     ],
     rehypePlugins: [

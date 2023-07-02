@@ -42,6 +42,6 @@ Reactions are helpful when you want to show others that you saw their message. U
     2. Hover over the message and click :desktop-reply: **Reply**.
     3. Type your reply and press ++return++.
 
-:::tip
+<Admonition type="tip">
 You can reply with text, emojis, images and stickers.
-:::
+</Admonition>

@@ -7,9 +7,9 @@ title: Mute your notifications
 
 You can turn off and on your notifications for the entire app or specific communities, channels, group chats, and direct messages (DMs) for a designated period. Communities, group chats, channels and direct messages appear greyed out when you mute their notifications.
 
-:::tip
+<Admonition type="tip">
 You have the option to [set notification exceptions](./set-notification-exceptions) to fine-tune your notification preferences, allowing certain notifications to come through even if others are muted. For instance, you can mute all notifications for a channel except for messages sent by a specific user.
-:::
+</Admonition>
 
 ## Mute all the Status app notifications
 
@@ -26,9 +26,9 @@ You have the option to [set notification exceptions](./set-notification-exceptio
     1. In the **Settings** sidebar, click :desktop-notification: **Notifications and Sounds**.
     1. Turn **Notifications** off.
 
-:::info
+<Admonition type="info">
 Muting all the Status app notifications mutes ephemeral notifications (the ones appearing on your screen and disappearing shortly after).
-:::
+</Admonition>
 
 ## Mute specific notifications
 

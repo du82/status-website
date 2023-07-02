@@ -5,9 +5,9 @@ language: en
 title: Set up channel permissions
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only set up channel permissions using Status desktop.
-:::
+</Admonition>
 
 Community owners can set up permissions using three different variables: `Who holds`, `Is allowed to` and `In`. For each one of them, follow the same procedure and use the table below as a reference.
 

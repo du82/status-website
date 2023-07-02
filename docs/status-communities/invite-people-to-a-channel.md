@@ -7,9 +7,9 @@ title: Invite people to a channel
 
 Whether you're a comunity owner or a member, you can invite anyone to any channel you're a member of.
 
-:::info
+<Admonition type="info">
 To join the channel, the person you're inviting needs to be a member of the community.
-:::
+</Admonition>
 
 ## Invite options
 
@@ -47,6 +47,6 @@ There are three different options you can invite someone to a channel.
     | Invite your Status contacts | 1. In the **Invite Contacts** pop-up window, type the names of your contacts in the search bar or check the boxes next to the names. <br/> 2. Click **Next**. <br/> 3. Optionally, type an invitation message. <br/> 4. Click **Send Invites**. |
     | Share a link | 1. In the **Invite Contacts** pop-up window, click :desktop-copy: **Copy** next to the link. <br/> 2. Switch to the app where you want to share the link and paste it there.
 
-:::tip
+<Admonition type="tip">
 After opening the link or scanning the QR code, people can [install Status](../getting-started/run-the-status-app-for-the-first-time) if they haven't already.
-:::
+</Admonition>

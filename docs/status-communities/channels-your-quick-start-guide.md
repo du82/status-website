@@ -9,9 +9,9 @@ In [Status Communities](./how-to-use-communities-your-quick-start-guide), you ha
 
 As a community owner, you can use channels to break down a large community into smaller, more focused sub-groups. With Status, you can [configure channel permissions](./configure-channel-permissions) based on token ownership. For example, you can make a public channel private or view-only by only allowing holders of specific tokens to join or post.
 
-:::tip
+<Admonition type="tip">
 To add channels to your community, check out [Create a channel](./create-a-channel).
-:::
+</Admonition>
 
 `{/* [image](image) */}`
 
@@ -28,9 +28,9 @@ The list of available channels in a community. [Private channels](./configure-ch
 
 All members in a [Status Community](./how-to-use-communities-your-quick-start-guide) can browse and join public channels. For private channels, you must [meet the token requirements](./understand-token-requirements-in-channels) to join the channel. To maintain access to private channels, hold the required tokens at all times.
 
-:::info
+<Admonition type="info">
 Messages in [private communities](./how-to-use-communities-your-quick-start-guide) and private channels are always end-to-end encrypted.
-:::
+</Admonition>
 
 `{/* [image](image) */}`
 

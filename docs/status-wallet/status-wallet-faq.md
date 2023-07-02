@@ -15,9 +15,9 @@ Yes. The source code of [Status Mobile](https://github.com/status-im/status-mobi
 
 Yes, Status Wallet is fully self-custodial. This means that Status Wallet doesn't store or even have access to your recovery phrase. You're the only person who can access the phrase and manage your account. This also means that if you lose your recovery phrase, Status Wallet can't restore it for you.
 
-:::info
+<Admonition type="info">
 Anyone who has your recovery phrase can use it to access your wallet and manage your crypto. For tips on how to protect your recovery phrase, check out [Back up and secure your recovery phrase](../your-profile-and-preferences/back-up-and-secure-your-recovery-phrase).
-:::
+</Admonition>
 
 ### Is Status Wallet secure?
 

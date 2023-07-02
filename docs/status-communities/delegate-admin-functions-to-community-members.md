@@ -5,9 +5,9 @@ language: en
 title: Delegate admin functions to community members
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only delegate admin functions using Status desktop. [:octicons-desktop-download-16: Download Status desktop](https://status.im/get).
-:::
+</Admonition>
 
 Community owners have total control over their communities, including settings, membership approvals and permissions. In addition, owners can delegate administrative functions to other community members through the [admin role](./permissions-by-role-in-status-communities). Admins play a similar role to owners, but with some important differences. Check out [Permissions by role in Status Communities](./permissions-by-role-in-status-communities) for more information.
 
@@ -32,9 +32,9 @@ If you use a collectible, follow this process:
 
 Using ENS names, you don't need to mint and airdrop any token. You [delegate admin functions](#delegate-admin-functions-using-collectibles-or-ens-names) to a specific ENS name owner (such as alice.acme.eth) or a group of people under the same ENS domain (such as acme.eth).
 
-:::info
+<Admonition type="info">
 Assets don't have the non-transferable (soulbound) and self-destructing properties collectibles have, making it harder to remove admin functions from other users. Avoid using assets to delegate admin functions.
-:::
+</Admonition>
 
 ## Delegate admin functions using collectibles or ENS names
 
@@ -58,6 +58,6 @@ Assets don't have the non-transferable (soulbound) and self-destructing properti
     ||  2. Enter the ENS name or domain you want to delegate admin functions to. |
     || 3. Click **Add**. |
 
-:::info
+<Admonition type="info">
 When you select the `Become admin` role, the **Hide permission** option is enabled automatically.
-:::
+</Admonition>

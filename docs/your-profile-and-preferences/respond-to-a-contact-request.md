@@ -7,9 +7,9 @@ title: Respond to a contact request
 
 Status users who search for your profile or you interact with can send you contact requests. For example, users you have shared your profile with or those in mutual communities or group chats with you.
 
-:::tip
+<Admonition type="tip">
 If you want to send a contact request, check out [Add a contact in Status](./add-a-contact-in-status).
-:::
+</Admonition>
 
 ## What to expect
 
@@ -27,9 +27,9 @@ If you want to send a contact request, check out [Add a contact in Status](./add
     1. From the top navigation, tap :mobile-notification: **Notifications**, then tap **Contact request**.
     1. Tap **Accept** or **Decline** the contact request or tap **Review contact request**. If you decline, the sender doesn't receive any notification.
 
-:::tip
+<Admonition type="tip">
 Tap the profile picture to view the sender's profile.
-:::
+</Admonition>
 
 === "Desktop"
 
@@ -37,13 +37,13 @@ Tap the profile picture to view the sender's profile.
     1. At the top of the content area, click :desktop-notification: **Notifications**, then click **Contact requests**.
     1. Click **Yes** or **No** to accept or decline the contact request, or click the request message to view details. If you decline, the sender doesn't receive any notification.
 
-:::tip
+<Admonition type="tip">
 Click the profile picture to view the sender's profile.
-:::
+</Admonition>
 
-:::tip
+<Admonition type="tip">
 In Status, you can [label other users' profiles](./understand-status-profile-labels). For example, whether you accept or reject the contact request from someone, you can [block the user](./block-or-unblock-someone-in-status) or [mark the user as untrusted](./verify-your-contacts-identity). After you accept the request, you can [verify the user's identity](./verify-your-contacts-identity) or [mark the user as identity verified](./verify-your-contacts-identity).
-:::
+</Admonition>
 
 ## Stop receiving contact requests
 

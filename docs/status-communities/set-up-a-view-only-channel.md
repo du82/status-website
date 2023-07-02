@@ -5,15 +5,15 @@ language: en
 title: Set up a view-only channel
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only set up a view-only channel using Status desktop. [:octicons-desktop-download-16: Download Status desktop](https://status.im/get).
-:::
+</Admonition>
 
 In a view-only channel, everyone with access can view the conversation, but they can't respond or write in the channel. The community [owner or admin](./permissions-by-role-in-status-communities) can designate certain people or groups to write in the view-only channel.
 
-:::info
+<Admonition type="info">
 Members with view-only access to the channel can still [react](../messaging-and-web3-browser/react-and-reply-to-messages) on the channel's messages.
-:::
+</Admonition>
 
 To learn how to use read-only channels in your community, check out [About view-only channels](./about-view-only-channels).
 
@@ -59,9 +59,9 @@ If you mint a [collectible](../status-wallet/collectibles-your-quick-start-guide
     | `Is allowed to` | :desktop-view: `View only` |
     | `In` | Choose the channel you want to set as read-only. |
 
-:::tip
+<Admonition type="tip">
 Optionally, check :desktop-hide: **Hide permission** to hide this permission from members who don't meet the requirements.
-:::
+</Admonition>
 
 ## Grant someone post permissions in a view-only channel
 

@@ -5,9 +5,9 @@ language: en
 title: Manage community join requests
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only manage community join requests in Status desktop app.
-:::
+</Admonition>
 
 You can set up manual or automatic approval join requests for your community. All requests to join your community are automatically approved by default, but you can enable manual approval.
 
@@ -20,9 +20,9 @@ With the manual approval option, you receive a notification whenever someone req
 - If your control node is offline (for example, when you turn off your computer or close the Status desktop app), automatic join requests are rejected, and manual join requests time out in seven days. Keep the Status desktop app running as much as possible.
 - In addition to manual approval, you can set up [token requirements](./understand-token-requirements-in-communities) to join communities. Manual approval and token requirements work independently.
 
-:::info
+<Admonition type="info">
 Status Communities take into account token requirements before membership requests.
-:::
+</Admonition>
 
 ## Set up the approval request option
 

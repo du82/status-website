@@ -7,9 +7,9 @@ title: Common issues when the community control node is offline
 
 When you [create a community](./create-a-status-community), your computer becomes a [control node](./about-the-control-node-in-status-communities). As the community owner, the control node runs automatically in your Status desktop app if you use the same profile and computer where you set up the community.
 
-:::info
+<Admonition type="info">
 You can [set up a new control node](./replace-your-community-s-control-node) if the initial Status desktop fails or becomes inaccessible.
-:::
+</Admonition>
 
 If you don't have the Status desktop app running and connected to the internet, your community keeps working, but your members' experience degrades. Here are some of the problems you and your members may find:
 
@@ -19,6 +19,6 @@ If you don't have the Status desktop app running and connected to the internet, 
 - Your community can't verify if members in [token-gated channels](./set-up-channel-permissions) still hold the required tokens.
 - Members who could not access a private channel for not [meeting the requirements](./understand-token-requirements-in-channels) can't join the channel even if they meet them now.
 
-:::tip
+<Admonition type="tip">
 Keep the Status desktop app working as the [community control node](./about-the-control-node-in-status-communities) online every day or at least once every six days.
-:::
+</Admonition>

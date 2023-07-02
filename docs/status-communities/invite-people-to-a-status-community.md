@@ -7,9 +7,9 @@ title: Invite people to a Status Community
 
 Whether you are a community member or not, you can tell people about the community and invite them to join.
 
-:::info
+<Admonition type="info">
 People you invite still need to meet the requirements to join private communities.
-:::
+</Admonition>
 
 ## Invite options
 
@@ -47,6 +47,6 @@ There are three approaches to inviting someone.
     | Share to Status contacts | 1. In the **Invite Contacts** pop-up window, type the names of your contacts in the search bar or check the boxes next to the names. <br/> 2. Click **Next**. <br/> 3. Optionally, type an invitation message. <br/> 4. Click **Send Invites**. |
     | Share a link | 1. In the **Invite Contacts** pop-up window, click :desktop-copy: **Copy** next to the link. <br/> 2. Switch to the app or platform where you want to share the link and paste it there.
 
-:::tip
+<Admonition type="tip">
 After opening the link or scanning the QR code, people can [install Status](../getting-started/#download-status) Status if they haven't already.
-:::
+</Admonition>

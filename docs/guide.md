@@ -54,17 +54,17 @@ Aliquip exercitation ut commodo ullamco mollit et occaecat exercitation. Aliquip
 
 ## Admonitions
 
-:::warn
+<Admonition type="warn">
 Here is some warning
-:::
+</Admonition>
 
-:::info
-Here is some warning <br/>
-:::
+<Admonition type="info">
+Here is some info
+</Admonition>
 
-:::tip
-Here is some warning
-:::
+<Admonition type="tip">
+Here is some tip
+</Admonition>
 
 ### Code blocks
 

@@ -11,9 +11,9 @@ title: Understand common crypto scams
 
 Think of Status Wallet as a personal safe you keep at home. Even though it has a bullet-proof body and a secure lock, anyone you invite into your house and share your code with can open the safe. The safe is the device you're using for Status, and the code is your recovery phrase.
 
-:::tip
+<Admonition type="tip">
 To protect your crypto, protect the device you're using for Status and your [recovery phrase](../your-profile-and-preferences/understand-your-status-keys-and-recovery-phrase).
-:::
+</Admonition>
 
 There are several scams common in the crypto industry, and you can protect yourself from all of them if you understand how they work.
 

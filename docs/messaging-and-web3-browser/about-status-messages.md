@@ -27,9 +27,9 @@ We've built the Status app to keep your messages and information out of our reac
 - Only you and the message recipient can read your messages.
 - Status cannot identify you or other participants in the conversation.
 
-:::tip
+<Admonition type="tip">
 For answers to general questions about your Status messages, check the [Messages FAQ](./messages-faq) topic.
-:::
+</Admonition>
 
 ## Understand peer-to-peer messaging
 
@@ -47,6 +47,6 @@ When you communicate with someone on the Status app, your messages, attachments,
 
 Status incorporates the [Perfect Forward Secrecy :octicons-tab-external-16:](https://en.wikipedia.org/wiki/Forward_secrecy) (PFS) encryption mechanism, ensuring that encryption keys change on every message. If your keys are compromised, only the associated message is compromised. All previous messages remain private.
 
-:::info
+<Admonition type="info">
 Status messaging protects your privacy in one-to-one communications, chat groups, public chats, and Communities.
-:::
+</Admonition>

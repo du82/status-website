@@ -5,15 +5,15 @@ language: en
 title: View and edit your Status profile
 ---
 
-:::info
+<Admonition type="info">
 Currently, some profile sections are not editable on Status desktop. Use the Status mobile app to edit them.
-:::
+</Admonition>
 
 Your profile serves as a showcase of who you are to other Status users. You can make as many edits as you need, and the profile updates take effect instantly.
 
-:::tip
+<Admonition type="tip">
 To see how your profile appears to others, check out [View your profile as someone else](./view-your-profile-as-someone-else).
-:::
+</Admonition>
 
 ## Edit your Status profile
 
@@ -78,9 +78,9 @@ Such information is hidden by default. You can choose what to reveal to differen
 1. Tap the item you want to edit.
 1. Choose **Everyone**, **Contacts**, **ID verified contacts** or **No one**.
 
-:::warn
+<Admonition type="warn">
 Be careful with sharing sensitive information to protect yourself against scams and fraud.
-:::
+</Admonition>
 
 ### Web links
 

@@ -5,17 +5,17 @@ language: en
 title: Set up a private community
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only set up private communities using Status desktop.
-:::
+</Admonition>
 
 By default, a new Status Community is public and available for everyone to join. As a community owner, you can [use token-based permissions](./set-up-your-community-permissions) to create a token-gated or private community.
 
 Only people holding the tokens the private community requires can join and participate. For instance, you can configure a token-based permission that requires members to hold a certain amount of DAI and ETH tokens to join. Or, you can restrict access to users in a particular ENS domain, such as acme.eth.
 
-:::info
+<Admonition type="info">
 In addition to tokens, community owners can require [manual approval](./manage-community-join-requests) to join their communities. Token-based permissions and manual approval work independently.
-:::
+</Admonition>
 
 Token requirements can be useful to ensure that your community members have a certain level of commitment or interest in the topic of the community. If you run an organization with an ENS domain, you can also set up a private community for holders of your ENS domain only (for example, alice.acme.eth or bob.acme.eth).
 
@@ -41,6 +41,6 @@ Community owners customize permissions using three different variables: `Who hol
     1. For the `In` variable, make sure your community is selected.
     1. Click **Create permission**. The new permission takes effect immediately.
 
-:::tip
+<Admonition type="tip">
 Tokens are linked by `AND` operators. This means access is granted when the holder owns all the tokens. If you want to use the `OR` operator instead, create additional permissions with different `Who holds` values. You can create a maximum of five different Become member permissions.
-:::
+</Admonition>

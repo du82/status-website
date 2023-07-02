@@ -24,6 +24,6 @@ The desktop version only shows a limited preview of your profile. Instead, use t
     1. Click :desktop-profile: **Profile**.
     1. In the **Profile** content area, select **Preview**.
 
-:::tip
+<Admonition type="tip">
 If you want to make any changes, check out [View and edit your Status profile](./view-and-edit-your-status-profile).
-:::
+</Admonition>

@@ -5,9 +5,9 @@ language: en
 title: About the Community History Service
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only configure and benefit from the community history service using Status desktop. [:octicons-desktop-download-16: Download Status desktop](https://status.im/get).
-:::
+</Admonition>
 
 Status uses a [peer-to-peer network](../messaging-and-web3-browser/about-status-messages#peer-to-peer-messaging) to temporarily store your community messages for 30 days. When your community members get online, messages are automatically downloaded and stored locally on their computers.
 
@@ -20,9 +20,9 @@ The peer-to-peer network deletes messages older than 30 days, so members who don
 - When new members join, they can immediately see messages from the past 30 days. However, it may take a few days for messages older than 30 days to appear.
 - Messages are only readable after importing in Status. The messages in the archives are encrypted, and it's impossible to directly open the archives to read them.
 
-:::info
+<Admonition type="info">
 Downloading and importing messages can take a long time. If messages of a period don't appear, wait a few days.
-:::
+</Admonition>
 
 ## How the Community History Service works
 
@@ -32,13 +32,13 @@ Every seven days, the CHS prompts your control node to create an archive for mes
 
 The CHS runs automatically in the background, you can't see its processes or notifications. You or your community members must be online with the Status desktop app running for the CHS to share, download or import archives.
 
-:::info
+<Admonition type="info">
 Status can't access or manipulate your messages through the CHS. The archives are stored locally on your and your community members' computers.
-:::
+</Admonition>
 
-:::tip
+<Admonition type="tip">
 To avoid exposing your IP address to other community members, use a VPN when running Status.
-:::
+</Admonition>
 
 ## An example of the workflow
 
@@ -65,8 +65,8 @@ Don't remove or edit torrent files, as they're part of the CHS mechanism.
 
 If you [move your control node](./restore-your-status-community) from one computer to another, copy the Status folder to the new computer to keep the existing archives accessible.
 
-:::tip
+<Admonition type="tip">
 [Turning off the CHS](./turn-off-the-community-history-service) significantly reduces community members' experience. Keep it on unless it's really necessary.
-:::
+</Admonition>
 
 \*[magnet link]: A magnet link is a hyperlink containing information needed for downloading data in a peer-to-peer network, like the filename and download sources.

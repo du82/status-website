@@ -5,10 +5,10 @@ language: en
 title: Create a Status Community
 ---
 
-:::info
+<Admonition type="info">
 Currently, you can only create and administer communities using the Status desktop app.
 [Download Status desktop :octicons-desktop-download-16:](https://status.im/get)
-:::
+</Admonition>
 
 A [Status Community](./about-status-communities) is a place where you can connect and communicate with people who share your interests. Communities are ideal for those with a passion or hobby, study groups, gaming communities, professional network groups, or creators looking to generate income from their content without intermediaries.
 
@@ -36,9 +36,9 @@ You can configure these community settings:
 | **Request to join required**     | Community owners must manually approve each join request if this setting is checked. This option applies to [open and private](./about-status-communities) communities.                    |
 | **Any member can pin a message** | Any community member can [pin messages](../messaging-and-web3-browser/pin-a-message) when this setting is checked. If the setting is unchecked, only the community owner can pin messages. |
 
-:::info
-The Community history service uses the [BitTorrent peer-to-peer network :octicons-tab-external-16:](https://en.wikipedia.org/wiki/BitTorrent) to store and retrieve community messages older than 30 days. Status uses a decentralized network and does not store this information.
-:::
+<Admonition type="info">
+The Community history service uses the [BitTorrent peer-to-peer network <ExternalIcon />](https://en.wikipedia.org/wiki/BitTorrent) to store and retrieve community messages older than 30 days. Status uses a decentralized network and does not store this information.
+</Admonition>
 
 ## Describe your community and its rules
 

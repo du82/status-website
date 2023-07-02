@@ -11,9 +11,9 @@ The Status app uses the [Tenor GIF :octicons-tab-external-16:](https://tenor.com
 
 You can add more stickers to default sticker sets in Status, or share a sticker set with someone. See [Add, remove or share sticker sets](./add-remove-or-share-sticker-sets).
 
-:::info
+<Admonition type="info">
 To show the GIF preview and not its URL, [enable rich link previews](../your-profile-and-preferences/enable-rich-link-previews-in-messages) in messages.
-:::
+</Admonition>
 
 ## Send GIFs
 
@@ -31,9 +31,9 @@ To show the GIF preview and not its URL, [enable rich link previews](../your-pro
     1. Search or choose the GIF you want to share. The GIF is sent immediately.
     1. Optionally, hover over the GIF in the preview window and click the :desktop-favourite: **Star** icon to save it as a favourite.
 
-:::tip
+<Admonition type="tip">
 If you want to add a message to your GIF, write the text before selecting the GIF.
-:::
+</Admonition>
 
 ## Send stickers
 

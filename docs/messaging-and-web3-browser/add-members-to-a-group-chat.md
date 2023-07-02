@@ -13,7 +13,7 @@ If you want to create a new chat, see [Create a group chat](./create-a-group-cha
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: Messages.
+    1. From the tab bar, tap <MessagesIcon /> Messages.
     2. Open the group chat you want to add new members to.
     3. From the navigation bar, tap :mobile-more-options: **More options**.
     4. Tap :mobile-placeholder: **Add members**. If you're the group chat owner, this will say :mobile-placeholder: **Add / remove members** for you.

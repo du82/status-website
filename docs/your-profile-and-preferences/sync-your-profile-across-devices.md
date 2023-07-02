@@ -25,7 +25,7 @@ When setting up syncing, you need to reveal the QR code or sync code on the prim
 
     ### Step 1: Reveal the code for syncing on your main device
 
-    1. From the tab bar, tap :mobile-messages: **Messages**.
+    1. From the tab bar, tap <MessagesIcon /> **Messages**.
     1. Tap your profile picture and go to :mobile-syncing: **Syncing**.
     1. Proceed depending on your situation.
         - If you have never used Status on your other device before, tap :desktop-plus: **Add** and then tap :mobile-reveal: **Reveal sync code**.
@@ -43,12 +43,12 @@ When setting up syncing, you need to reveal the QR code or sync code on the prim
 
     | Device to sync | Steps |
     | ------ | ----- |
-    | Doesn't run Status |  1. Install and open Status.  2. Tap **Sign in**. 3. Tap :mobile-camera: **Enable camera** to scan the QR code shown on your first device or tap **Enter sync code** to enter the sync code. 4. Wait for your devices to synchronize and tap **Continue**. 5. Configure your device's biometrics (fingerprint, face or other) to fill in your password. If you want to enable biometrics later, tap **Maybe later**. 6. On the **Enable notifiactions** screen, tap :iconset-notifications: **Enable notifications** and allow notifications from Status. Alternatively, tap **Maybe later**. |
-    | Running Status |  1. From the tab bar, tap :mobile-messages: **Messages**. 2. Tap your profile picture and go to :mobile-syncing: **Syncing**. 3. Tap :desktop-plus: **Add**. 4. Tap :mobile-scan: **Scan or enter sync code**. 5. Tap :mobile-camera: **Enable camera** to scan the QR code shown on your main device or tap **Enter sync code** to enter the sync code. |
+    | Doesn't run Status |  1. Install and open Status.  2. Tap **Sign in**. 3. Tap <CameraIcon /> **Enable camera** to scan the QR code shown on your first device or tap **Enter sync code** to enter the sync code. 4. Wait for your devices to synchronize and tap **Continue**. 5. Configure your device's biometrics (fingerprint, face or other) to fill in your password. If you want to enable biometrics later, tap **Maybe later**. 6. On the **Enable notifiactions** screen, tap :iconset-notifications: **Enable notifications** and allow notifications from Status. Alternatively, tap **Maybe later**. |
+    | Running Status |  1. From the tab bar, tap <MessagesIcon /> **Messages**. 2. Tap your profile picture and go to :mobile-syncing: **Syncing**. 3. Tap :desktop-plus: **Add**. 4. Tap :mobile-scan: **Scan or enter sync code**. 5. Tap <CameraIcon /> **Enable camera** to scan the QR code shown on your main device or tap **Enter sync code** to enter the sync code. |
 
-:::tip
+<Admonition type="tip">
 During the syncing process, make sure Status is running on both devices and connected to the internet. Under the QR code, you can see the validity time of the QR code and the sync code. If the codes expire, confirm your profile credentials again and get new ones.
-:::
+</Admonition>
 
 ## Turn off profile syncing
 

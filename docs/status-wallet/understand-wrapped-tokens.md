@@ -9,9 +9,9 @@ Different blockchains can't communicate with each other. For example, if you hol
 
 Wrapped tokens solve this problem. For example, you can exchange your BTC coin for WBTC, wrapped Bitcoin, which is a token on the Ethereum blockchain. Each WBTC token is backed by a BTC coin stored in a dedicated vault. To understand the differences between coins and tokens better, check out [Understand coins and tokens](./understand-coins-and-tokens).
 
-:::info
+<Admonition type="info">
 [Status Wallet](./status-wallet-your-quick-start-guide) is only compatible with Ethereum-based tokens.
-:::
+</Admonition>
 
 ## The basics
 

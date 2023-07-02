@@ -7,9 +7,9 @@ title: Block or unblock someone in Status
 
 You can block a stranger or an existing contact to stop receiving harmful content and excluding the user entirely from your experience with Status.
 
-:::warn
+<Admonition type="warn">
 Blocking someone deletes all messages from the user. Status can't recover them for you.
-:::
+</Admonition>
 
 ## What to expect
 
@@ -24,7 +24,7 @@ Blocking someone deletes all messages from the user. Status can't recover them f
 
 === "Mobile"
 
-    1. From the tab bar, tap :mobile-messages: **Messages**.
+    1. From the tab bar, tap <MessagesIcon /> **Messages**.
     1. Tap **Contacts**, then tap the profile picture of the contact you want to block.
     1. From the top navigation, tap :mobile-more-options: **More options**.
     1. Tap :mobile-block: **Block User**.
@@ -49,9 +49,9 @@ A stranger is a user who is not your contact. You can encounter a stranger in a 
 
     | Context | Steps |
     |-------|-------|
-    | Mutual group chat | 1. From the tab bar, tap :mobile-messages: **Messages** > **Groups**. 2. Long press the group chat.  3. Tap :mobile-group-members: **Group details**. |
+    | Mutual group chat | 1. From the tab bar, tap <MessagesIcon /> **Messages** > **Groups**. 2. Long press the group chat.  3. Tap :mobile-group-members: **Group details**. |
     | Mutual community or channel | 1. From the tab bar, tap :mobile-communities: **Communities** > **Joined**. 2. Long press the community.  3. Tap :mobile-group-members: **View members**. |
-    | Contact request | From the tab bar, tap :mobile-messages: **Messages** > **Contacts** > **Pending requests**. |
+    | Contact request | From the tab bar, tap <MessagesIcon /> **Messages** > **Contacts** > **Pending requests**. |
 
     ### Step 2: Block the user
 

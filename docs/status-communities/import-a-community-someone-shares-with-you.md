@@ -7,9 +7,9 @@ title: Import a community someone shares with you
 
 You can import a Status Community someone [shares with you](./invite-people-to-a-status-community) using the link, QR code or public's community key. Importing a community can also be helpful when you need help finding the community.
 
-:::info
+<Admonition type="info">
 If you're a community owner and want to restore your community on a different device, read [Restore your Status Community](./restore-your-status-community).
-:::
+</Admonition>
 
 ## Import community options
 
@@ -51,6 +51,6 @@ To import the community, ask the person sharing the community to [send you the l
     1. In the **Community key** text field, enter the community link or public's community key.
     1. Click **Import**. If the **Import** option is unavailable, verify you're entering the correct key.
 
-:::info
+<Admonition type="info">
 After opening the link or scanning the QR code, you can [install Status](../getting-started/#download-status) if you haven't already.
-:::
+</Admonition>

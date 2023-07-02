@@ -9,17 +9,17 @@ The computer where you create your Status Community and every computer where you
 
 The community control node maintains the settings, configuration and functionality of your community. Keep the Status desktop app where you set up your community running and connected to the internet as much as possible, or at least once every six days.
 
-:::warn
+<Admonition type="warn">
 Don't use more than one installation of Status desktop as your community's control node. Running your community with multiple control nodes will cause unforeseen issues and increase your community's bandwidth requirements.
-:::
+</Admonition>
 
 ## Replace your community's control node
 
 Here are the steps to set up a new Status desktop installation as the community control node. You need a [backup of your community's private key](./back-up-your-community-s-private-key) and your [profile's recovery phrase](../your-profile-and-preferences/back-up-and-secure-your-recovery-phrase) to complete this process"
 
-:::warn
+<Admonition type="warn">
 Only proceed if you have a copy of your community's private key and recovery phrase. If you proceed without this information, you will lose your Status profile and community.
-:::
+</Admonition>
 
 - [x] If you can still access the initial Status desktop app acting as the control node, [uninstall this app](../your-profile-and-preferences/uninstall-status-desktop).
 - [x] Using the same computer or a different one, reinstall Status desktop [with the same Status profile you used to create your community](../getting-started/create-or-restore-your-status-profile-using-a-recovery-phrase). Don't import your community's private key yet.

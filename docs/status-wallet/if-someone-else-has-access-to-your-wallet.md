@@ -7,9 +7,9 @@ title: If someone else has access to your Wallet
 
 Your Status Wallet and profile share the same [recovery phrase](../your-profile-and-preferences/understand-your-status-keys-and-recovery-phrase). While your profile and wallet are protected by your Status password, anyone who has your recovery phrase can log in to your profile and wallet even without your password.
 
-:::tip
+<Admonition type="tip">
 To learn more about how to back up your recovery phrase, check out [Back up and secure your recovery phrase](../your-profile-and-preferences/back-up-and-secure-your-recovery-phrase).
-:::
+</Admonition>
 
 If you think someone else has access to your wallet (for example, you [see transactions in your history that you don't recognize](./handle-transactions-you-don-t-recognize)), you should create a new Status profile and transfer your crypto to your new Wallet.
 
@@ -48,6 +48,6 @@ Start with creating a new Status profile. You can use multiple profiles at the s
 
 You can remove your compromised profile from your profile list to avoid confusing it with your new one. For more details on how to do that, see [Remove a Status profile from your profile list](../your-profile-and-preferences/remove-a-status-profile-from-your-profile-list).
 
-:::tip
+<Admonition type="tip">
 To learn more about common crypto scams and how to protect yourself in future, check out [Understand common scams](./understand-common-scams).
-:::
+</Admonition>

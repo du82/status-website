@@ -7,9 +7,9 @@ title: Leave a Status Community
 
 There are times when you may not enjoy the conversations in a community, and you can leave it.
 
-:::tip
+<Admonition type="tip">
 If you find yourself overwhelmed by community notifications, there's no need to leave the communities. You can [turn off the notifications](../your-profile-and-preferences/configure-community-and-channel-notifications).
-:::
+</Admonition>
 
 ## What to expect
 
