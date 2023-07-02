@@ -1,6 +1,8 @@
 import { allDocs } from '@docs'
 import { Avatar, Button, Text } from '@status-im/components'
 import { BulletIcon, CheckIcon, EditIcon } from '@status-im/icons'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { Admonition } from '@/components/admonition'
@@ -9,8 +11,10 @@ import { Link } from '@/components/link'
 import { SearchButton } from '@/components/search-button'
 import { SidebarMenu } from '@/components/sidebar-menu'
 import { TOC } from '@/components/toc'
+import { clientEnv } from '@/config/env.client.mjs'
 import { AppLayout, Content } from '@/layouts/app-layout'
 import { buildDocsTree } from '@/utils/build-link-tree'
+import { resolvePathname } from '@/utils/resolve-pathname'
 import { slugify } from '@/utils/slugify'
 
 import config from '../../../config.json'
@@ -45,7 +49,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   // root
   const breadcrumbs = [
     {
-      label: 'Status Help',
+      label: 'Help',
       href: '/help',
     },
   ]
@@ -72,6 +76,128 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
       breadcrumbs,
     },
   }
+}
+
+type Props = {
+  doc: Doc
+  // menu: SidebarMenuProps['items']
+  menu: string
+  breadcrumbs: BreadcrumbsProps['items']
+}
+
+function transformArray(arr: any[]): any {
+  return arr.map(item => {
+    const [label, value] = Object.entries(item)[0]
+    if (Array.isArray(value)) {
+      return {
+        label,
+        links: value.map(link => {
+          const [linkLabel, linkValue] = Object.entries(link)[0] as [any, any]
+
+          return {
+            label: linkLabel,
+            href: '/help/' + linkValue + '#' + slugify(linkLabel),
+          }
+        }),
+      }
+    }
+
+    return {
+      label,
+      href: value,
+    }
+  })
+}
+
+const DocsDetailPage: Page<Props> = props => {
+  const { doc, breadcrumbs } = props
+
+  const isIndex = doc['_raw'].sourceFileName.includes('index.md')
+  const DocContent = useMDXComponent(doc.body.code)
+
+  return (
+    <Content>
+      {/* Header */}
+      <div className="flex">
+        <div className="flex-1">
+          <Breadcrumbs
+            items={breadcrumbs}
+            action={<SearchButton size={32} />}
+          />
+        </div>
+      </div>
+
+      <div className="relative grid xl:grid-cols-[320px_1fr_380px]">
+        {/* Menu */}
+        <SidebarMenu items={transformArray(config.nav)} />
+
+        {/* Content */}
+        <div className="mx-auto w-full max-w-[734px] px-24 py-20 pb-32">
+          <div className="mb-3 flex justify-between">
+            <div className="flex items-center gap-1">
+              <Link
+                href={`https://github.com/${doc.author}`}
+                className="flex items-center gap-1"
+              >
+                <Avatar
+                  type="user"
+                  name="Jorge Campo"
+                  size={20}
+                  src={`https://github.com/${doc.author}.png`}
+                />
+                <Text size={15} weight="semibold">
+                  {doc.author}
+                </Text>
+              </Link>
+              <Text size={15} color="$neutral-50">
+                on{' '}
+                {new Intl.DateTimeFormat('en-GB', {
+                  dateStyle: 'medium',
+                }).format(new Date(doc.last_edited))}
+              </Text>
+            </div>
+
+            <Button
+              variant="outline"
+              size={24}
+              icon={<EditIcon size={12} color="$neutral-50" />}
+              onPress={() => {
+                window.open(
+                  `${clientEnv.GITHUB_DOCS_URL}/${doc._raw.sourceFilePath}`,
+                  '_blank'
+                )
+              }}
+            >
+              Edit on GitHub
+            </Button>
+          </div>
+
+          <h1 className="mb-10 text-[40px] font-bold">
+            <AnchorLink id={doc.titleSlug}>{doc.title}</AnchorLink>
+          </h1>
+          {doc.image && (
+            <Image src={doc.image.src} alt={doc.image.alt} className="mb-10" />
+          )}
+          {doc.body.raw === '' ? (
+            <Admonition type="info">
+              {"We're working on this content."}
+            </Admonition>
+          ) : (
+            <DocContent components={components} />
+          )}
+        </div>
+
+        {/* Table of contents */}
+        <div className="sticky top-0 hidden pt-20 xl:block">
+          {isIndex === false && <TOC headings={doc.headings} />}
+        </div>
+      </div>
+    </Content>
+  )
+}
+
+DocsDetailPage.getLayout = page => {
+  return <AppLayout>{page}</AppLayout>
 }
 
 const AnchorLink = ({
@@ -118,19 +244,17 @@ const components = {
     )
   },
   a: (props: ComponentProps<'a'>) => {
-    // console.log('components > a > props:', props)
-    // console.log(
-    //   new URL(
-    //     props.href!,
-    //     typeof window === 'undefined'
-    //       ? 'http://localhost'
-    //       : window.location.origin
-    //   )
-    // )
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const router = useRouter()
+    const external = props.href?.startsWith('http')
+    const [basePath] = router.asPath.split('#')
+
     return (
-      // @ts-expect-error something with ref
-      <Link href={props.href!} {...props}>
-        <Text size={15} color="$primary-50" weight="semibold">
+      <Link
+        {...(props as any)}
+        href={external ? props.href : resolvePathname(props.href!, basePath)}
+      >
+        <Text size={15} color="$primary-50">
           {props.children}
         </Text>
       </Link>
@@ -186,128 +310,6 @@ const components = {
       <Admonition {...props} />
     </div>
   ),
-}
-
-type Props = {
-  doc: Doc
-  // menu: SidebarMenuProps['items']
-  menu: string
-  breadcrumbs: BreadcrumbsProps['items']
-}
-
-function transformArray(arr: any[]): any {
-  return arr.map(item => {
-    const [label, value] = Object.entries(item)[0]
-    if (Array.isArray(value)) {
-      return {
-        label,
-        links: value.map(link => {
-          const [linkLabel, linkValue] = Object.entries(link)[0] as [any, any]
-
-          return {
-            label: linkLabel,
-            href: '/help/' + linkValue + '#' + slugify(linkLabel),
-          }
-        }),
-      }
-    }
-
-    return {
-      label,
-      href: value,
-    }
-  })
-}
-
-const DocsDetailPage: Page<Props> = props => {
-  const { doc, breadcrumbs } = props
-
-  const DocContent = useMDXComponent(doc.body.code)
-
-  return (
-    <Content>
-      {/* Header */}
-      <div className="flex">
-        <div className="flex-1">
-          <Breadcrumbs
-            items={breadcrumbs}
-            action={<SearchButton size={32} />}
-          />
-        </div>
-      </div>
-
-      <div className="grid px-4 xl:grid-cols-[320px_1fr_380px]">
-        {/* Menu */}
-        <SidebarMenu items={transformArray(config.nav)} />
-
-        {/* Content */}
-        <div className="mx-auto max-w-[542px] py-20">
-          <div className="mb-3 flex justify-between">
-            <div className="flex items-center gap-1">
-              <Link
-                href={`https://github.com/${doc.author}`}
-                className="flex items-center gap-1"
-              >
-                <Avatar
-                  type="user"
-                  name="Jorge Campo"
-                  size={20}
-                  src={`https://github.com/${doc.author}.png`}
-                />
-                <Text size={15} weight="semibold">
-                  {doc.author}
-                </Text>
-              </Link>
-              <Text size={15} color="$neutral-50">
-                on{' '}
-                {new Intl.DateTimeFormat('en-GB', {
-                  dateStyle: 'medium',
-                }).format(new Date(doc.last_edited))}
-              </Text>
-            </div>
-
-            <Button
-              variant="outline"
-              size={24}
-              icon={<EditIcon size={12} color="$neutral-50" />}
-              onPress={() => {
-                window.open(
-                  // TODO: move this to config constant
-                  `https://github.com/status-im/status-web/tree/main/apps/website/docs/${doc._raw.sourceFilePath}`,
-                  '_blank'
-                )
-              }}
-            >
-              Edit on GitHub
-            </Button>
-          </div>
-
-          <h1 className="mb-10 text-[40px] font-bold">
-            <AnchorLink id={doc.titleSlug}>{doc.title}</AnchorLink>
-          </h1>
-          {doc.image && (
-            <img src={doc.image.src} alt={doc.image.alt} className="mb-10" />
-          )}
-          {doc.body.raw === '' ? (
-            <Admonition type="info">
-              {"We're working on this content."}
-            </Admonition>
-          ) : (
-            <DocContent components={components} />
-          )}
-        </div>
-
-        {/* Table of contents */}
-        <div className="sticky top-0 hidden pt-20 xl:block">
-          <TOC headings={doc.headings} />
-        </div>
-      </div>
-    </Content>
-  )
-}
-
-DocsDetailPage.getLayout = page => {
-  return <AppLayout>{page}</AppLayout>
 }
 
 export default DocsDetailPage

@@ -1,0 +1,5 @@
+{
+  "markdown.preferredMdPathExtensionStyle": "removeExtension",
+  "markdown.validate.enabled": true,
+  "markdown.validate.ignoredLinks": ["/assets/**/*"]
+}

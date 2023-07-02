@@ -5,7 +5,7 @@ language: en
 title: About Status messages
 ---
 
-Messaging is a critical Status component. The Status app combines [peer-to-peer messaging](./about-status-messages#peer-to-peer-messaging.md) technologies with robust end-to-end encryption across all your devices. Peer-to-peer messaging eliminates the need for centralized servers and intermediaries, providing a censorship-resistant alternative to other popular messaging apps.
+Messaging is a critical Status component. The Status app combines [peer-to-peer messaging](./about-status-messages#peer-to-peer-messaging) technologies with robust end-to-end encryption across all your devices. Peer-to-peer messaging eliminates the need for centralized servers and intermediaries, providing a censorship-resistant alternative to other popular messaging apps.
 
 We've built the Status app to keep your messages and information out of our reach. Other messaging apps offer end-to-end encryption, but their centralized network design allows interpretation of who is talking to whom and where. See how Status compares to other messaging apps in the table below:
 
@@ -28,7 +28,7 @@ We've built the Status app to keep your messages and information out of our reac
 - Status cannot identify you or other participants in the conversation.
 
 :::tip
-For answers to general questions about your Status messages, check the [Messages FAQ](./messages-faq.md) topic.
+For answers to general questions about your Status messages, check the [Messages FAQ](./messages-faq) topic.
 :::
 
 ## Understand peer-to-peer messaging
@@ -37,7 +37,7 @@ Status provides resilient messaging without relying on centralized servers, data
 
 Unlike centralized networks (A), which depend on a central server to relay messages, peer-to-peer networks (B) encrypt and broadcast every message to all participant nodes. A node is a computer or smartphone that relays messages to other nodes or temporarily stores them for disconnected peers. Even when all nodes can access your messages, the content is encrypted so that only you and the intended recipients can read them.
 
-![The peer-to-peer network sends messages to every node and doesn't rely on a central server.](/assets/docs/messaging-and-web3-browser/about-status-messages/125-0-1-dark.png)
+![The peer-to-peer network sends messages to every node and doesn't rely on a central server.](/assets/help/messaging-and-web3-browser/about-status-messages/125-0-1-dark.png)
 
 ## Built-in privacy and security
 

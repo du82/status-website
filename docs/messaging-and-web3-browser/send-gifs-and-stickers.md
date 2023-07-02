@@ -9,10 +9,10 @@ Animated GIFs and stickers are a popular way of expressing emotions, reactions a
 
 The Status app uses the [Tenor GIF :octicons-tab-external-16:](https://tenor.com/) search engine and database for GIFs. You can also share GIFs from other sources by sending a message with the GIF URL.
 
-You can add more stickers to default sticker sets in Status, or share a sticker set with someone. See [Add, remove or share sticker sets](./add-remove-or-share-sticker-sets.md).
+You can add more stickers to default sticker sets in Status, or share a sticker set with someone. See [Add, remove or share sticker sets](./add-remove-or-share-sticker-sets).
 
 :::info
-To show the GIF preview and not its URL, [enable rich link previews](../your-profile-and-preferences/enable-rich-link-previews-in-messages.md) in messages.
+To show the GIF preview and not its URL, [enable rich link previews](../your-profile-and-preferences/enable-rich-link-previews-in-messages) in messages.
 :::
 
 ## Send GIFs

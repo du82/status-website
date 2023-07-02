@@ -12,7 +12,7 @@ Currently, some profile sections are not editable on Status desktop. Use the Sta
 Your profile serves as a showcase of who you are to other Status users. You can make as many edits as you need, and the profile updates take effect instantly.
 
 :::tip
-To see how your profile appears to others, check out [View your profile as someone else](./view-your-profile-as-someone-else.md).
+To see how your profile appears to others, check out [View your profile as someone else](./view-your-profile-as-someone-else).
 :::
 
 ## Edit your Status profile
@@ -30,12 +30,12 @@ To see how your profile appears to others, check out [View your profile as someo
     1. In the **Profile** content area, select **Edit**.
     1. Choose the area you want to edit and follow the corresponding procedure from this table：
 
-| Area to edit                                                                                          | Availability                               |
-| :---------------------------------------------------------------------------------------------------- | :----------------------------------------- |
-| [Profile picture](./view-and-edit-your-status-profile#edit-profile-picture.md)                        | Mobile and desktop (limited functionality) |
-| [Name, bio or accent colour](./view-and-edit-your-status-profile#edit-profile-info.md)                | Mobile and desktop (limited functionality) |
-| [Communities, accounts, collectibles or assets](./view-and-edit-your-status-profile#edit-showcase.md) | Mobile                                     |
-| [Web links](./view-and-edit-your-status-profile#manage-links.md)                                      | Mobile and desktop                         |
+| Area to edit                                                                                       | Availability                               |
+| :------------------------------------------------------------------------------------------------- | :----------------------------------------- |
+| [Profile picture](./view-and-edit-your-status-profile#edit-profile-picture)                        | Mobile and desktop (limited functionality) |
+| [Name, bio or accent colour](./view-and-edit-your-status-profile#edit-profile-info)                | Mobile and desktop (limited functionality) |
+| [Communities, accounts, collectibles or assets](./view-and-edit-your-status-profile#edit-showcase) | Mobile                                     |
+| [Web links](./view-and-edit-your-status-profile#manage-links)                                      | Mobile and desktop                         |
 
 ### Profile picture
 

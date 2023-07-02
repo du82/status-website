@@ -5,9 +5,9 @@ language: en
 title: Join a channel
 ---
 
-With Status, you can organize your conversations with community members into designated spaces called [channels](channels-your-quick-start-guide.md). Channels bring the right people and information together for a common purpose, like a specific project or topic.
+With Status, you can organize your conversations with community members into designated spaces called [channels](channels-your-quick-start-guide). Channels bring the right people and information together for a common purpose, like a specific project or topic.
 
-All members of a [community](about-status-communities.md) can browse and join public channels. For private channels, you must [meet the requirements](understand-token-requirements-in-channels.md) to join the channel. To maintain access to private channels, hold the necessary tokens at all times.
+All members of a [community](about-status-communities) can browse and join public channels. For private channels, you must [meet the requirements](understand-token-requirements-in-channels) to join the channel. To maintain access to private channels, hold the necessary tokens at all times.
 
 ## Join a public channel
 

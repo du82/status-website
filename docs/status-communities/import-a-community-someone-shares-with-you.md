@@ -5,10 +5,10 @@ language: en
 title: Import a community someone shares with you
 ---
 
-You can import a Status Community someone [shares with you](./invite-people-to-a-status-community.md) using the link, QR code or public's community key. Importing a community can also be helpful when you need help finding the community.
+You can import a Status Community someone [shares with you](./invite-people-to-a-status-community) using the link, QR code or public's community key. Importing a community can also be helpful when you need help finding the community.
 
 :::info
-If you're a community owner and want to restore your community on a different device, read [Restore your Status Community](./restore-your-status-community.md).
+If you're a community owner and want to restore your community on a different device, read [Restore your Status Community](./restore-your-status-community).
 :::
 
 ## Import community options
@@ -25,7 +25,7 @@ Use the community link, QR code or public key to find and import the community y
 
 ## Import a community
 
-To import the community, ask the person sharing the community to [send you the link or show you the QR code](./invite-people-to-a-status-community.md).
+To import the community, ask the person sharing the community to [send you the link or show you the QR code](./invite-people-to-a-status-community).
 
 === "Mobile"
 
@@ -52,5 +52,5 @@ To import the community, ask the person sharing the community to [send you the l
     1. Click **Import**. If the **Import** option is unavailable, verify you're entering the correct key.
 
 :::info
-After opening the link or scanning the QR code, you can [install Status](../getting-started/#download-status.md) if you haven't already.
+After opening the link or scanning the QR code, you can [install Status](../getting-started/#download-status) if you haven't already.
 :::

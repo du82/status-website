@@ -31,7 +31,7 @@ Replace the \* with the Status app version number. For example: `StatusIm-Deskto
 
 ## Step 2: Run the Status app for the first time
 
-If this is the first time you run Status on your computer, check [Run the Status app for the first time](./run-the-status-app-for-the-first-time.md).
+If this is the first time you run Status on your computer, check [Run the Status app for the first time](./run-the-status-app-for-the-first-time).
 
 ## Verify the Status app GPG signature
 
