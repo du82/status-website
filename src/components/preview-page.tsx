@@ -14,12 +14,7 @@ import {
   ToastContainer,
   useToast,
 } from '@status-im/components'
-import {
-  DownloadIcon,
-  InfoIcon,
-  MembersIcon,
-  QrCodeIcon,
-} from '@status-im/icons'
+import { InfoIcon, MembersIcon, QrCodeIcon } from '@status-im/icons'
 import { useQuery } from '@tanstack/react-query'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -28,6 +23,7 @@ import { ERROR_CODES } from '@/consts/error-codes'
 import { useURLData } from '@/hooks/use-url-data'
 import { getRequestClient } from '@/lib/request-client'
 
+import { CTAButton } from './cta-button'
 import { ErrorPage } from './error-page'
 import { QrDialog } from './qr-dialog'
 
@@ -497,13 +493,7 @@ export function PreviewPage(props: PreviewPageProps) {
                   </h3>
                   <ul>
                     <ListItem order={1}>
-                      <Button
-                        size={24}
-                        icon={<DownloadIcon size={12} />}
-                        disabled
-                      >
-                        Sign up for early access
-                      </Button>
+                      <CTAButton size={24} />
                     </ListItem>
                     {/* todo?: delete step; merge with download */}
                     <ListItem order={2}>

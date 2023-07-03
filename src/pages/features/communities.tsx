@@ -16,7 +16,7 @@ import heroImage2 from '@assets/communities/hero-02.png'
 // TODO FIX BOX SHADOW
 import heroImage3 from '@assets/communities/hero-03.png'
 import heroImage4 from '@assets/communities/hero-04.png'
-import illustrationMain from '@assets/communities/illustration-main.png'
+// import illustrationMain from '@assets/communities/illustration-main.png'
 // import image5 from '@assets/communities/grid-5.png'
 import sectionImage1 from '@assets/communities/section-01.png'
 import sectionImage2 from '@assets/communities/section-02.png'
@@ -25,7 +25,6 @@ import Image from 'next/image'
 
 import { Section } from '@/components/cards'
 import { Hero } from '@/components/hero'
-import { ImageGrid } from '@/components/image-grid'
 import { VideoSection } from '@/components/video-section'
 import { AppLayout, Content } from '@/layouts/app-layout'
 
@@ -35,10 +34,9 @@ const CommunitiesPage: Page = () => {
   return (
     <Content>
       <Hero
-        type="Communities"
+        type="communities"
         title="Discover your community"
         description="Find your tribe in the metaverse of truly free Status communities."
-        color="turquoise"
         images={[heroImage1, heroImage2, heroImage3, heroImage4]}
         maxWidth={702}
       />
@@ -52,24 +50,32 @@ const CommunitiesPage: Page = () => {
       />
       <div className="pb-12 lg:pb-20">
         <Section
-          icon="skull"
+          icon="lock"
           title="Token gated channels & communities"
           description="Access exclusive community spaces and content. Controlled access plus moderation for high signal to noise."
           secondaryTitle="Become eligible for airdrops"
           secondaryDescription="Every Status Community can create their own tokens and optionally airdrop tokens to their members.  Of course of doing an airdrop or not is enterally the individual choice of each community"
-          image={sectionImage1}
+          video={{
+            mp4: '/assets/video-home-to-channel.mp4',
+            webm: '/assets/video-home-to-channel.webm',
+            poster: sectionImage1.src,
+          }}
           imageAlt="wallet-5"
           color="turquoise"
         />
 
         <Section
-          icon="skull"
+          icon="shapes"
           title="DeFi, DAO and NFT communities"
           description="Status Communities is built around tokenised functionality, perfect for blockchain enthusiast communities."
           secondaryTitle="Every community sets its own rules"
           secondaryDescription="Anybody can create a community, which is it’s own self-sovereign space.  This means that what each community does is enterally up to them.  Join the ones you like, leave the ones you don’t."
           reverse
-          image={sectionImage2}
+          video={{
+            mp4: '/assets/video-post-to-channel.mp4',
+            webm: '/assets/video-post-to-channel.webm',
+            poster: sectionImage2.src,
+          }}
           imageAlt="wallet-5"
           color="turquoise"
         />
@@ -86,7 +92,7 @@ const CommunitiesPage: Page = () => {
       </div>
 
       <div className="gallery">
-        <div className="gallery-wrapper">
+        <div className="no-scrollbar gallery-wrapper">
           <div className="gallery-inside">
             <div className="relative min-h-[230px] min-w-[335px] snap-start">
               <Image
@@ -155,40 +161,70 @@ const CommunitiesPage: Page = () => {
           </div>
         </div>
       </div>
-      <div className="container rounded-[40px] bg-customisation-turquoise/5 py-40">
-        <div className="mx-auto max-w-[702px] gap-4 text-center">
-          <h2 className="pb-4 text-40 lg:text-64">
-            A wonderful chat experience
-          </h2>
-          <Text size={27}>
-            Give your community a unique look that reflects it’s passions and
-            values. Or just look cool ✨
-          </Text>
+
+      <div className="rounded-[40px] bg-customisation-turquoise/5 py-40">
+        <div className="mx-auto max-w-[1294px] px-5">
+          <div className="mx-auto max-w-[702px] gap-4 pb-8 text-center">
+            <h2 className="pb-4 text-40 lg:text-64">
+              A wonderful chat experience
+            </h2>
+            <Text size={27}>
+              Give your community a unique look that reflects it’s passions and
+              values. Or just look cool ✨
+            </Text>
+          </div>
+
+          <div className="flex justify-center pb-30">
+            <Button variant="outline">See messenger features</Button>
+          </div>
+
+          <div className="relative flex w-full justify-between">
+            {/* <div className="absolute inset-x-0 bottom-0 z-10 h-52 bg-gradient-to-t from-customisation-turquoise/5" /> */}
+            <div className="flex flex-col gap-16">
+              <Image
+                src={featureImage1}
+                alt="TODO"
+                width={375}
+                height={142}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+              <Image
+                src={featureImage2}
+                alt="TODO"
+                width={375}
+                height={471}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <Image
+                src={featureImage3}
+                alt="TODO"
+                width={375}
+                height={812}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+            </div>
+
+            <div className="flex flex-col gap-16">
+              <Image
+                src={featureImage4}
+                alt="TODO"
+                width={375}
+                height={471}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+              <Image
+                src={featureImage5}
+                alt="TODO"
+                width={375}
+                height={142}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center pb-10 pt-8">
-          <Button variant="outline">See messenger features</Button>
-        </div>
-
-        {/* TODO: add row spans */}
-        <ImageGrid>
-          <div className="row-span-2">
-            <Image src={featureImage1} alt="TODO" />
-          </div>
-          <div className="row-span-4">
-            <Image src={featureImage2} alt="TODO" />
-          </div>
-
-          <div className="row-span-6">
-            <Image src={featureImage3} alt="TODO" />
-          </div>
-
-          <div className="row-span-4">
-            <Image src={featureImage4} alt="TODO" />
-          </div>
-          <div className="row-span-2">
-            <Image src={featureImage5} alt="TODO" />
-          </div>
-        </ImageGrid>
       </div>
     </Content>
   )

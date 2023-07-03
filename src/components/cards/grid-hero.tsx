@@ -30,7 +30,7 @@ const imagesWithBorders = cva(['border-4', 'rounded-3xl'], {
   },
 })
 
-const imagesWithBordersTopOrBottom = cva(['border-4', 'rounded-3xl'], {
+const imagesWithBordersTopOrBottom = cva(['border-4'], {
   variants: {
     color: {
       yellow: ['border-customisation-yellow/5'],
@@ -38,8 +38,8 @@ const imagesWithBordersTopOrBottom = cva(['border-4', 'rounded-3xl'], {
       purple: ['border-customisation-purple/5'],
     },
     alignment: {
-      top: ['border-t-0'],
-      bottom: ['border-b-0'],
+      top: ['rounded-b-3xl border-t-0'],
+      bottom: ['rounded-t-3xl border-b-0'],
     },
   },
 })
@@ -47,7 +47,7 @@ const imagesWithBordersTopOrBottom = cva(['border-4', 'rounded-3xl'], {
 const thirdCardClassNames = cva(
   [
     'flex min-w-[calc(50%-10px)] rounded-[40px]',
-    'px-[22px] sm:min-w-0 sm:px-[35px] lg:px-5 xl:px-[34px]  2xl:px-[73px]',
+    'px-[22px] sm:min-w-0 sm:px-[35px] lg:px-5 xl:px-[34px] 2xl:px-[73px]',
   ],
   {
     variants: {
@@ -120,6 +120,7 @@ const GridHero = (props: Props) => {
         <div className="flex flex-row gap-3 sm:gap-5">
           <div className={biggerCardClassNames({ color })}>
             <Image
+              priority
               src={cardOne.image}
               alt={cardOne.alt}
               className={imagesWithBorders({ color })}
@@ -127,6 +128,7 @@ const GridHero = (props: Props) => {
           </div>
           <div className={biggerCardClassNames({ color })}>
             <Image
+              priority
               src={cardTwo.image}
               alt={cardTwo.alt}
               className={imagesWithBorders({ color })}
@@ -141,6 +143,7 @@ const GridHero = (props: Props) => {
             })}
           >
             <Image
+              priority
               src={cardThree.image}
               alt={cardThree.alt}
               className={imagesWithBordersTopOrBottom({
@@ -150,7 +153,12 @@ const GridHero = (props: Props) => {
             />
           </div>
           <div className={fourthCardClassNames({ color })}>
-            <Image src={cardFour.image} alt={cardFour.alt} />
+            <Image
+              priority
+              src={cardFour.image}
+              alt={cardFour.alt}
+              className="rounded-3xl"
+            />
           </div>
         </div>
       </div>

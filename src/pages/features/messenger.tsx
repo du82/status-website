@@ -1,4 +1,5 @@
-import screenshot from '@assets/create-community/screenshot-01.png'
+import { useState } from 'react'
+
 // import featureImage1 from '@assets/messenger/feature-01.png'
 // import featureImage2 from '@assets/messenger/feature-02.png'
 import featureImage3 from '@assets/messenger/feature-03.png'
@@ -16,27 +17,66 @@ import identityNote from '@assets/messenger/identity-note.png'
 import sectionImage1 from '@assets/messenger/section-01.png'
 import sectionImage2 from '@assets/messenger/section-02.png'
 import { Text } from '@status-im/components'
+import { CheckIcon } from '@status-im/icons'
 import { cx } from 'class-variance-authority'
 import Image from 'next/image'
 
 import { Section } from '@/components/cards'
 import { Hero } from '@/components/hero'
+import {
+  IdentityShowcase,
+  identityVariants,
+} from '@/components/identity-showcase'
 import { SectionDesktopScreenshot } from '@/components/section-desktop-screenshot'
 import { SectionLarge } from '@/components/section-large'
 import { VideoSection } from '@/components/video-section'
 import { AppLayout, Content } from '@/layouts/app-layout'
 
+import type { IdentityVariant } from '@/components/identity-showcase'
 import type { Page } from 'next'
 
+const borderColor = {
+  army: 'border-customisation-army/20',
+  blue: 'border-customisation-blue/20',
+  camel: 'border-customisation-camel/20',
+  cooper: 'border-customisation-cooper/20',
+  magenta: 'border-customisation-magenta/20',
+  orange: 'border-customisation-orange/20',
+  pink: 'border-customisation-pink/20',
+  purple: 'border-customisation-purple/20',
+  sky: 'border-customisation-sky/20',
+  turquoise: 'border-customisation-turquoise/20',
+  yellow: 'border-customisation-yellow/20',
+  yin: 'border-customisation-yin/20',
+}
+
+const afterBorderColor = {
+  army: 'after:border-customisation-army/20',
+  blue: 'after:border-customisation-blue/20',
+  camel: 'after:border-customisation-camel/20',
+  cooper: 'after:border-customisation-cooper/20',
+  magenta: 'after:border-customisation-magenta/20',
+  orange: 'after:border-customisation-orange/20',
+  pink: 'after:border-customisation-pink/20',
+  purple: 'after:border-customisation-purple/20',
+  sky: 'after:border-customisation-sky/20',
+  turquoise: 'after:border-customisation-turquoise/20',
+  yellow: 'after:border-customisation-yellow/20',
+  yin: 'after:border-customisation-yin/20',
+}
+
 const MessengerPage: Page = () => {
+  const [selectedIdentity, setSelectedIdentity] = useState<IdentityVariant>(
+    'bg-customisation-army-50'
+  )
+
   return (
     <>
       <Content>
         <Hero
-          type="Messenger"
+          type="messenger"
           title="Chat privately with friends"
           description="Protect your right to free speech. 1:1 and group chats with e2e encryption, perfect forward secrecy and metadata privacy."
-          color="purple"
           images={[heroImage1, heroImage2, heroImage3, heroImage4]}
           maxWidth={581}
         />
@@ -45,60 +85,39 @@ const MessengerPage: Page = () => {
             title="Fully Decentralized Messaging"
             description="Status’ Waku p2p messaging network is powered by people running Status Desktop - true decentralisation."
             poster="/assets/messenger/notifications-preview.png"
-            videoMp4="/assets/messenger/notifications.mp4"
-            videoWebm="/assets/messenger/notifications.webm"
+            videoMp4="/assets/create-community/notifications.mp4"
+            videoWebm="/assets/create-community/notifications.webm"
           />
 
           <Section
+            icon="ghost"
             color="purple"
-            icon="skull"
             title="Private 1:1 messaging"
             description="E2E encrypted with perfect forward secrecy and metadata privacy."
-            image={sectionImage1}
+            video={{
+              mp4: '/assets/video-messages-1-to-1-01.mp4',
+              webm: '/assets/video-messages-1-to-1-01.webm',
+              poster: sectionImage1.src,
+            }}
             imageAlt="wallet-2"
             secondaryTitle="Communicate pseudonymously"
             secondaryDescription="No identifying information required to use Status. We don’t force you to divulge for your phone number, email, bank card, google or facebook account (or anything else)."
           />
           <Section
+            icon="bubble"
             color="purple"
-            icon="pizza"
             title="Unstoppable group chats"
             description="Chat with friends safely, knowing the conversation doesn’t leave the group"
-            image={sectionImage2}
+            video={{
+              mp4: '/assets/video-messages-1-to-1-02.mp4',
+              webm: '/assets/video-messages-1-to-1-02.webm',
+              poster: sectionImage2.src,
+            }}
             imageAlt="wallet-5"
             secondaryTitle="With up to 20 people in each group chat"
             secondaryDescription="Some other platforms like Discord only let you create group chats with a maximum of 10 people. Status lets you create 20 person chats today and potentially even larger group chats tomorrow!"
             reverse
           />
-
-          {/* <ComparisionSection /> */}
-
-          {/* <div className="border-neutral-10 bg-white-100 relative rounded-[48px] border-t py-[160px] mix-blend-normal shadow-[0_-2px_20px_rgba(9,16,28,0.04)]">
-        <Section
-          title="New address format"
-          description="A way for wallets to automatically signal which chains they can receive funds on. So you don’t have to."
-          image="/images/wallet/7.png"
-          imageAlt="wallet-7"
-
-
-          secondaryDescription="Status is working with other wallets to ensure EIP-3770 with multiple chain shortName prefixes becomes the new ethereum address standard."
-          secondaryTitle="On the path to adoption"
-          reverse
-        />
-        <div className="relative pt-[160px]">
-          <Section
-            title="Total balance graphs"
-            description="Who doesn’t want to see how their ‘crypto portfolio number’ has gone up or down over time?"
-            image="/images/wallet/8.png"
-            imageAlt="wallet-8"
-
-
-            secondaryDescription="Everything is taken into account: fluctuations in fiat exchange rates, daily valuation updates of every crypto asset you hodl, and how your balance changes when tokens are sent/received"
-            secondaryTitle="Graphs that do maths"
-          />
-        </div>
-      </div> */}
-          {/* <HandsSection /> */}
         </div>
       </Content>
 
@@ -119,77 +138,84 @@ const MessengerPage: Page = () => {
       </div>
 
       <Content>
-        <SectionLarge
-          title="A wonderful chat experience"
-          description="No need to choose between a user experience you love, and being open source, decentralised and private. ✨"
-        >
-          <div className="mx-auto grid max-h-[1220px] grid-flow-col grid-rows-6 gap-5">
-            <FeatureItem
-              label="Photos"
-              imageSrc={featureImage3}
-              imageWidth={380}
-              span="row-span-4"
-            />
-            <FeatureItem
-              label="GIFs & Stickers"
-              imageSrc={featureImage4}
-              imageWidth={380}
-              span="row-span-2"
-            />
+        <div className="border-dashed-default border-b pb-40">
+          <SectionLarge
+            title="A wonderful chat experience"
+            description="No need to choose between a user experience you love, and being open source, decentralised and private. ✨"
+          >
+            <div className="mx-auto flex w-full max-w-[1504px] justify-center gap-5 px-10">
+              <div className="flex flex-1 flex-col gap-5">
+                <FeatureImage
+                  label="Photos"
+                  imageSrc={featureImage3}
+                  imageWidth={381}
+                  imageHeight={732}
+                />
+                <FeatureImage
+                  label="GIFs & Stickers"
+                  imageSrc={featureImage4}
+                  imageWidth={334}
+                  imageHeight={312}
+                />
+              </div>
 
-            <FeatureItem
-              label="Code snippets"
-              imageSrc={featureImage5}
-              imageWidth={334}
-              span="row-span-2"
-            />
-            <FeatureItem
-              label="Audio messages"
-              imageSrc={featureImage6}
-              imageWidth={334}
-              span="row-span-2"
-            />
-            <FeatureItem
-              label="Text formatting"
-              imageSrc={featureImage7}
-              imageWidth={334}
-              span="row-span-2"
-            />
+              <div className="flex flex-1 flex-col gap-5">
+                <FeatureImage
+                  label="Code snippets"
+                  imageSrc={featureImage5}
+                  imageWidth={334}
+                  imageHeight={312}
+                />
+                <FeatureImage
+                  label="Audio messages"
+                  imageSrc={featureImage6}
+                  imageWidth={334}
+                  imageHeight={312}
+                />
+                <FeatureImage
+                  label="Text formatting"
+                  imageSrc={featureImage7}
+                  imageWidth={334}
+                  imageHeight={312}
+                />
+              </div>
 
-            <FeatureItem
-              label="Links unrolled"
-              imageSrc={featureImage8}
-              imageWidth={380}
-              span="row-span-3"
-              reverse
-            />
-            <FeatureItem
-              label="Write long messages"
-              imageSrc={featureImage9}
-              imageWidth={334}
-              span="row-span-3"
-              reverse
-            />
-          </div>
-        </SectionLarge>
-        <div className="py-40"></div>
+              <div className="flex flex-1 flex-col gap-5">
+                <FeatureImage
+                  label="Links unrolled"
+                  imageSrc={featureImage8}
+                  imageWidth={381}
+                  imageHeight={522}
+                  reverse
+                />
+                <FeatureImage
+                  label="Write long messages"
+                  imageSrc={featureImage9}
+                  imageWidth={334}
+                  imageHeight={522}
+                  reverse
+                />
+              </div>
+            </div>
+          </SectionLarge>
+        </div>
 
-        <div className="container justify-center py-12 lg:flex lg:py-20">
+        <div className="container justify-center py-12 pt-40 lg:flex lg:pb-20">
           <div className="relative z-[3]">
             <div
               className={cx(
-                'flex flex-col gap-12 lg:flex-row lg:items-center xl:gap-[120px]'
+                'flex flex-col items-center gap-0 lg:flex-row xl:gap-[140px]'
               )}
             >
-              <div className="flex flex-1 flex-col justify-start lg:justify-center">
+              <div className="flex w-[360px] flex-1 flex-col justify-start lg:w-full lg:justify-center">
                 <div className="flex flex-col">
-                  <div className="mb-5 flex flex-col lg:mb-16">
-                    <h2 className="text-left text-40 lg:text-64">
+                  <div className="mb-8 flex flex-col lg:mb-16">
+                    <h2 className="mb-6 text-left text-40 lg:text-64">
                       Your assets.
                       <br />
                       Your identity.
                     </h2>
-                    <div className="relative flex pt-1">
+                    <div className="relative flex">
                       <Text size={27}>
                         Showcase some or all of your tokens, memberships and
                         accounts with friends, the world, or keep private.
@@ -198,51 +224,112 @@ const MessengerPage: Page = () => {
                     <Image
                       src={identityNote}
                       alt="Your identity"
-                      className="my-6"
+                      className="mt-6 hidden lg:block"
                       height="24"
                       width="183"
                     />
                   </div>
+                  <Text size={13} color="$neutral-40">
+                    Preview examples
+                  </Text>
+                  <div
+                    className={cx(
+                      'mb-12 flex flex-row flex-wrap justify-between pt-3 lg:mb-0 lg:w-[462px] lg:flex-nowrap lg:justify-normal'
+                    )}
+                  >
+                    {identityVariants.map(variant => {
+                      const selectedVariant = variant
+                        .replace('bg-customisation-', '')
+                        .replace('-50', '')
+
+                      return (
+                        <div
+                          key={variant}
+                          className={cx(
+                            'relative m-1 h-11 w-11 rounded-full border-2 lg:h-7 lg:w-7',
+                            "after:pointer-events-none after:absolute after:-top-[2px] after:left-[50%] after:z-0 after:h-[44px] after:w-[22px] after:overflow-hidden after:rounded-r-full after:border-2 after:border-l-0 after:content-[''] lg:after:h-[28px] lg:after:w-[14px]",
+                            variant === selectedIdentity &&
+                              afterBorderColor[
+                                selectedVariant as keyof typeof borderColor
+                              ],
+                            variant === selectedIdentity
+                              ? 'after:visible'
+                              : 'after:invisible',
+                            variant === selectedIdentity
+                              ? borderColor[
+                                  selectedVariant as keyof typeof borderColor
+                                ]
+                              : 'border-white-100'
+                          )}
+                        >
+                          <button
+                            className={cx(
+                              'z-10 flex h-10 w-10 items-center justify-center rounded-full lg:h-6 lg:w-6',
+                              variant
+                            )}
+                            onClick={() => setSelectedIdentity(variant)}
+                          >
+                            {variant === selectedIdentity ? (
+                              <CheckIcon size={16} color="$white-100" />
+                            ) : (
+                              ''
+                            )}
+                          </button>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
 
-              <div className="flex flex-1 justify-center overflow-hidden rounded-[32px]">
-                <Image src={heroImage2} alt="Your identity" className="mb-4" />
-              </div>
+              <IdentityShowcase
+                alt="Your identity"
+                selectedVariant={selectedIdentity}
+              />
             </div>
           </div>
         </div>
 
-        <SectionDesktopScreenshot
-          title="Share your profile"
-          description="Using web URLs that can be posted on Web2 social media. User doesn’t have Status? Open in browser."
-          // fix screenshot
-          image={screenshot}
-          icon="pizza"
-        />
+        <div className="pb-30 pt-20 lg:pt-0">
+          <SectionDesktopScreenshot
+            title="Share your profile"
+            description="Using web URLs that can be posted on Web2 social media. User doesn’t have Status? Open in browser."
+            selectedVariant={selectedIdentity}
+            icon="businessCards"
+          />
+        </div>
       </Content>
     </>
   )
 }
 
-const FeatureItem = ({
+const FeatureImage = ({
   label,
   imageSrc,
   imageWidth,
+  imageHeight,
   imageAlt,
-  span,
   reverse,
 }: any) => {
   return (
     <div
       className={cx([
-        'flex flex-col items-center rounded-[36px] border border-neutral-80/10 text-center',
-        span,
+        'flex w-full max-w-[462px] flex-col items-center rounded-[36px] border border-neutral-80/10 text-center',
         reverse && 'flex-col-reverse',
       ])}
     >
-      <Image src={imageSrc} width={imageWidth} quality={80} alt={imageAlt} />
-      <div className="py-4">
+      <Image
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        quality={80}
+        alt={imageAlt}
+        className={cx([
+          'border-4 border-customisation-purple/5',
+          reverse ? 'rounded-t-3xl border-b-0' : 'rounded-b-3xl border-t-0',
+        ])}
+      />
+      <div className="py-6">
         <Text size={27} weight="semibold">
           {label}
         </Text>

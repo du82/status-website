@@ -1,7 +1,9 @@
 import { Text } from '@status-im/components'
+import Image from 'next/image'
 
 import { SOCIALS } from '@/config/routes'
 
+import { Link } from '../link'
 import { Logo } from '../logo'
 import { AccordionMenu } from '../navigation/accordion-menu'
 import { Dot } from './components/dot'
@@ -57,15 +59,18 @@ export const FooterMobile = (props: Props) => {
                 Messari Transparency Verified
               </Text>
             </div>
+
             <div className="flex gap-3">
               {Object.values(SOCIALS).map(social => {
-                const IconComponent = social.icon
                 return (
-                  <IconComponent
-                    key={social.name}
-                    size={20}
-                    color="$neutral-40"
-                  />
+                  <Link href={social.href} key={social.name}>
+                    <Image
+                      src={social.src}
+                      alt={social.name}
+                      width={20}
+                      height={20}
+                    />
+                  </Link>
                 )
               })}
             </div>

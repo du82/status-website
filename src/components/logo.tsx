@@ -1,11 +1,10 @@
+import logoBlogSrc from '@images/logo/blog.svg'
+import logoSrc from '@images/logo/default.svg'
+import logoDevSrc from '@images/logo/dev.svg'
+import logoLearnSrc from '@images/logo/learn.svg'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { match, P } from 'ts-pattern'
-
-import logoBlogSrc from '../../public/images/logo/blog.svg'
-import logoSrc from '../../public/images/logo/default.svg'
-import logoDevSrc from '../../public/images/logo/dev.svg'
-import logoLearnSrc from '../../public/images/logo/learn.svg'
 
 type Props = {
   label?: boolean
@@ -25,7 +24,7 @@ export const Logo = (props: Props) => {
           () => <Image src={logoDevSrc} alt="Status logo" />
         )
         .with(
-          P.when(p => p.startsWith('/learn')),
+          P.when(p => p.startsWith('/help')),
           () => <Image src={logoLearnSrc} alt="Status logo" />
         )
         .with(

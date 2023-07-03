@@ -57,6 +57,15 @@ module.exports = {
           fontWeight: '600',
         },
       ],
+
+      15: [
+        '0.9375rem',
+        {
+          lineHeight: '1.45rem',
+          letterSpacing: '-0.00844rem',
+          fontWeight: '500',
+        },
+      ],
     },
 
     colors: colors,
@@ -66,6 +75,7 @@ module.exports = {
       medium: '500',
       semibold: '600',
       bold: '700',
+      700: '700',
     },
     boxShadow: {
       1: '0px 2px 20px rgba(9, 16, 28, 0.04)',
@@ -76,6 +86,10 @@ module.exports = {
     extend: {
       spacing: {
         30: '7.5rem',
+      },
+
+      borderRadius: {
+        '4xl': '2rem',
       },
 
       maxWidth: {

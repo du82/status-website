@@ -1,8 +1,10 @@
 import { Text } from '@status-im/components'
 import { cva } from 'class-variance-authority'
+import Image from 'next/image'
 
 import { ROUTES, SOCIALS } from '@/config/routes'
 
+import { Link } from '../link'
 import { Logo } from '../logo'
 import { Dot } from './components/dot'
 import { MessariIcon } from './components/messari-icon'
@@ -36,8 +38,8 @@ export const Footer = (props: Props) => {
   const { hasBorderTop } = props
 
   return (
-    <footer className="hidden pb-3 sm:block">
-      <div className="grid grid-cols-4 gap-5 sm:gap-0 lg:mb-10 lg:grid-cols-8">
+    <footer className="hidden sm:block">
+      <div className="grid grid-cols-4 gap-5 sm:gap-0 lg:mb-12 lg:grid-cols-8">
         <div
           className={section({
             hasBorderTop,
@@ -55,6 +57,7 @@ export const Footer = (props: Props) => {
           />
         ))}
       </div>
+
       <div className="flex flex-col items-start justify-between gap-2 px-5 lg:px-6 md-lg:flex-row md-lg:items-center">
         <div className="flex items-center gap-3">
           <Text size={11} color="$neutral-50">
@@ -73,7 +76,8 @@ export const Footer = (props: Props) => {
             </Text>
           </div>
         </div>
-        <div className="flex gap-3">
+
+        <div className="flex gap-3 py-6">
           <div className="flex items-center gap-3">
             <MessariIcon />
             <Text size={11} color="$neutral-50">
@@ -81,10 +85,12 @@ export const Footer = (props: Props) => {
             </Text>
             <Dot />
           </div>
+
           {Object.values(SOCIALS).map(social => {
-            const IconComponent = social.icon
             return (
-              <IconComponent key={social.name} size={20} color="$neutral-40" />
+              <Link href={social.href} key={social.name}>
+                <Image src={social.src} alt={social.name} />
+              </Link>
             )
           })}
         </div>

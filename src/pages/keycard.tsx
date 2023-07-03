@@ -1,6 +1,6 @@
 import sectionImage1 from '@assets/wallet/section-01.png'
 import { Button, Tag, Text } from '@status-im/components'
-import { KeycardIcon, PlayIcon } from '@status-im/icons'
+import { ExternalIcon, KeycardIcon } from '@status-im/icons'
 import Image from 'next/image'
 
 import { Video } from '@/components'
@@ -25,20 +25,28 @@ const KeycardPage: Page = () => {
 
         <div className="grid max-w-[518px]">
           <div className="mb-4 flex">
-            <Tag size={32} label="Keycard" />
+            <Tag
+              size={32}
+              label="Keycard"
+              icon={KeycardIcon}
+              color="$army-50"
+            />
           </div>
           <h1 className="mb-6 text-88">Status is better with Keycard</h1>
           <Text size={27}>
             The most secure, simple and open hardware wallet
           </Text>
 
-          <div className="flex">
+          <div className="flex pt-8">
             <div className="flex gap-2 rounded-2xl border border-dashed border-neutral-80/20 p-2">
-              <Button variant="primary" iconAfter={<KeycardIcon size={20} />}>
+              <Button
+                variant="primary"
+                iconAfter={<ExternalIcon size={20} />}
+                onPress={() => {
+                  window.open('https://keycard.tech/', '_blank')
+                }}
+              >
                 Get a Keycard
-              </Button>
-              <Button variant="outline" icon={<PlayIcon size={20} />}>
-                Watch demo
               </Button>
             </div>
           </div>
@@ -46,7 +54,7 @@ const KeycardPage: Page = () => {
       </div>
 
       <div>
-        <div className="container px-40 pb-20 pt-40">
+        <div className="container pb-20 pt-40">
           <h2 className="text-64">
             Intuitive security.
             <br />
@@ -105,7 +113,7 @@ const KeycardPage: Page = () => {
           className="absolute right-8 top-8"
         />
 
-        <div className="container flex justify-center divide-x divide-dashed divide-neutral-30 lg:px-30">
+        <div className="mx-auto flex max-w-[1264px] justify-center divide-x divide-dashed divide-neutral-30">
           {PREFOOTER_LIST.map(({ title, description, tags }) => (
             <div key={title} className="px-10 py-40">
               <div className="mb-6 gap-1">

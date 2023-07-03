@@ -4,6 +4,7 @@ import '@status-im/components/dist/style.css'
 
 import { ThemeProvider } from '@status-im/components'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Inspect from 'inspx'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -136,13 +137,15 @@ export default function App({ Component, pageProps }: Props) {
             </>
           ))}
       </Head>
-      <div id="app" className={inter.variable + ' font-sans'}>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider>
-            {getLayout(<Component {...pageProps} />)}
-          </ThemeProvider>
-        </QueryClientProvider>
-      </div>
+      <Inspect>
+        <div id="app" className={inter.variable + ' font-sans'}>
+          <QueryClientProvider client={queryClient}>
+            <ThemeProvider>
+              {getLayout(<Component {...pageProps} />)}
+            </ThemeProvider>
+          </QueryClientProvider>
+        </div>
+      </Inspect>
     </>
   )
 }

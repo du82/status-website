@@ -2,11 +2,17 @@ import { cva } from 'class-variance-authority'
 import Image from 'next/image'
 
 import { Border } from './cards/border'
+import { Video } from './video'
 
 import type { StaticImageData } from 'next/image'
 
 type Props = {
-  image: StaticImageData
+  image?: StaticImageData
+  video?: {
+    webm: string
+    mp4: string
+    poster: string
+  }
   alt: string
   color: 'yellow' | 'turquoise' | 'purple' | 'orange'
 }
@@ -56,7 +62,7 @@ const borderContainerClassNames = cva(
 )
 
 export const ScreenshotImage = (props: Props) => {
-  const { image, color } = props
+  const { image, color, video } = props
 
   return (
     <div className={containerClassNames({ color })}>
@@ -64,11 +70,21 @@ export const ScreenshotImage = (props: Props) => {
         <Border />
       </div>
       <div className=" absolute left-0 top-0 h-full w-full bg-[url('/assets/wallet/texture.png')] bg-contain bg-[left_top_0] bg-no-repeat" />
-      <Image
-        src={image}
-        alt={props.alt}
-        className={imageClassNames({ color })}
-      />
+      {image && (
+        <Image
+          src={image}
+          alt={props.alt}
+          className={imageClassNames({ color })}
+        />
+      )}
+      {video && (
+        <Video
+          poster={video.poster}
+          videoMp4={video.mp4}
+          videoWebm={video.webm}
+          className={imageClassNames({ color })}
+        />
+      )}
     </div>
   )
 }

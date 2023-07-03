@@ -3,10 +3,11 @@ type Props = {
   videoMp4: string
   poster: string
   className?: string
+  width?: number
 }
 
 const Video = (props: Props) => {
-  const { videoMp4, videoWebm, poster, className } = props
+  const { videoMp4, videoWebm, poster, className, width } = props
 
   return (
     <video
@@ -16,6 +17,7 @@ const Video = (props: Props) => {
       playsInline
       poster={poster}
       className={className}
+      width={width}
     >
       <source src={videoMp4} type="video/mp4;codecs=hvc1" />
       <source src={videoWebm} type="video/webm" />

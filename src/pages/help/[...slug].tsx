@@ -308,7 +308,7 @@ const components = {
     // return <ul className="list-inside list-disc" {...props} />
     return <ul className="grid gap-y-3">{props.children}</ul>
   },
-  ol: (props: ComponentProps<'ol'>) => {
+  ol: (props: any) => {
     const listItems = Children.toArray(props.children).filter(
       child => typeof child === 'object'
       // child => Children.only(child)
@@ -316,15 +316,15 @@ const components = {
 
     return (
       <ol className="grid gap-y-3" {...props}>
-        {Children.map(listItems, (item, index) =>
+        {Children.map(listItems, (item: any, index) =>
           cloneElement(item, { order: index + 1, parent: 'ol' })
         )}
       </ol>
     )
   },
-  li: (props: ComponentProps<'li'>) => {
+  li: (props: any) => {
     const icon = match(props.parent)
-      .with('ol', () => <Counter value={props.order} />)
+      .with('ol', () => <Counter value={props.order as any} />)
       .otherwise(() => <BulletIcon size={20} color="$neutral-50" aria-hidden />)
 
     return (

@@ -4,7 +4,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto max-w-[1504px] px-5 lg:px-40;
+    @apply mx-auto max-w-[1224px] px-5;
   }
 
   .border-dashed-default {
@@ -33,7 +33,7 @@
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
-    scroll-padding-left: 40px;
+    scroll-padding-left: 20px;
   }
 
   .gallery-inside {
@@ -49,24 +49,24 @@
     padding-inline-end: max(20px, (100vw - 1024px) / 2 - 20px);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1224px) {
     .gallery {
       grid-template-columns:
         [full-start] 1fr
         [content-start]
-        min(1184px, 100% - 320px)
+        min(1184px, 100% - 40px)
         [content-end]
         1fr [full-end];
     }
 
     .gallery-wrapper {
-      scroll-padding-left: 295px;
+      scroll-padding-left: calc(20px + ((100vw - 1224px) / 2));
     }
 
     .gallery-inside::after {
       content: '';
       align-self: stretch;
-      padding-inline-end: max(160px, (100vw - 1184px) / 2 - 160px);
+      padding-inline-end: max(20px, (100vw - 1184px) / 2 - 20px);
     }
   }
 }
@@ -120,6 +120,11 @@
 */
 * {
   margin: 0;
+}
+
+html,
+body {
+  font-family: var(--font-inter);
 }
 
 /*

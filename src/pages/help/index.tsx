@@ -69,7 +69,7 @@ const HelpPage: Page = () => {
                   className="flex flex-col rounded-[20px] border border-neutral-10 p-4 shadow-1 transition duration-100 hover:scale-[1.01] hover:shadow-3"
                 >
                   <div className="mb-3">
-                    <Image {...icon} alt={icon.alt} />
+                    <Image priority {...icon} alt={icon.alt} />
                   </div>
                   <div className="mb-5 grid flex-1 gap-1">
                     <Text size={19} weight="semibold">

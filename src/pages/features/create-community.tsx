@@ -1,3 +1,5 @@
+import React from 'react'
+
 import brandTurquoiseImage1 from '@assets/create-community/brand-turquoise-01.png'
 import brandTurquoiseImage2 from '@assets/create-community/brand-turquoise-02.png'
 import brandTurquoiseImage3 from '@assets/create-community/brand-turquoise-03.png'
@@ -20,45 +22,44 @@ import Image from 'next/image'
 import { Section } from '@/components/cards'
 import { FeatureList } from '@/components/feature-list'
 import { Hero } from '@/components/hero'
-import { ImageGrid } from '@/components/image-grid'
-import { SectionDesktopScreenshot } from '@/components/section-desktop-screenshot'
 import { SectionLarge } from '@/components/section-large'
 import { VideoSection } from '@/components/video-section'
-import { illustrations } from '@/config/illustrations'
+import { type Illustration, illustrations } from '@/config/illustrations'
 import { AppLayout, Content } from '@/layouts/app-layout'
 
 import type { Page } from 'next'
+import type { StaticImageData } from 'next/image'
 
 const FEATURE_LIST = [
   {
     title: 'Decentralized',
     description:
       'Communities are literally powered by their members running the Status Desktop app.',
-    icon: illustrations.doge,
+    icon: illustrations.decentralized,
   },
   {
     title: 'Permissionless',
     description:
       'Nobody can stop you creating a community, because nobody controls Status’ p2p network.',
-    icon: illustrations.mushroom,
+    icon: illustrations.guard,
   },
   {
     title: 'Self-sovereign',
     description:
       'Each community can set it’s own rules, whatever they are.  And is responsible for it’s own actions. ',
-    icon: illustrations.hand,
+    icon: illustrations.crown,
   },
   {
     title: '100% Free to use',
     description:
       'No paid tier. No artificially imposed limits. No commission charged on community token sales.',
-    icon: illustrations.duck,
+    icon: illustrations.free,
   },
   {
     title: '100% Open source',
     description:
       'Status itself is a community project.  Anyone can build, contribute to and fork it’s source code.',
-    icon: illustrations.flower,
+    icon: illustrations.folder,
   },
   {
     title: '100% Freedom',
@@ -93,11 +94,10 @@ const CreateCommunityPage: Page = () => {
   return (
     <Content dark>
       <Hero
-        type="Create Community"
+        type="create-community"
         title="Your community can take back control"
         description="Make your community autonomous and self sovereign."
         images={[heroImage1, heroImage2, heroImage3, heroImage4]}
-        color="turquoise"
         maxWidth={942}
         dark
       />
@@ -112,7 +112,9 @@ const CreateCommunityPage: Page = () => {
         hideToRight
       />
 
-      <FeatureList list={FEATURE_LIST} dark />
+      <div className="border-b border-dashed border-white-5 pb-40">
+        <FeatureList list={FEATURE_LIST} dark />
+      </div>
 
       <SectionLarge
         title="Crypto native"
@@ -133,14 +135,14 @@ const CreateCommunityPage: Page = () => {
           dark
         />
 
-        <div className="grid grid-flow-col gap-5 p-20">
+        <div className="grid grid-flow-col gap-5 p-40">
           {TOKEN_FEATURE_LIST.map(({ title, description, image }) => (
             <div
               key={title}
               className="rounded-[36px] border border-white-5 backdrop-blur-lg"
             >
               <div className="flex flex-col p-6">
-                <div className="flex flex-col pb-24">
+                <div className="flex flex-col gap-1 pb-12">
                   <Text size={27} weight="semibold" color="$white-100">
                     {title}
                   </Text>
@@ -155,31 +157,71 @@ const CreateCommunityPage: Page = () => {
         </div>
       </SectionLarge>
 
-      <SectionLarge
-        title="Your brand. Your community."
-        description="Give your community a unique look that reflects it’s passions and values. Or just look cool ✨"
-        dark
-      >
-        <ImageGrid>
-          <ImageGrid.Item src={brandTurquoiseImage1} alt="feature-1" span={5} />
+      <div className="relative z-10 rounded-t-[48px] bg-customisation-turquoise/5">
+        <SectionLarge
+          title="Your brand. Your community."
+          description="Give your community a unique look that reflects it’s passions and values. Or just look cool ✨"
+          dark
+        >
+          <div className="relative mx-auto flex w-full max-w-[1294px] justify-between px-5">
+            <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-white-100" />
+            {/* <div className="absolute inset-x-0 bottom-0 z-10 h-52 bg-gradient-to-t from-customisation-turquoise/5" /> */}
+            <div className="flex flex-col">
+              <Image
+                src={brandTurquoiseImage1}
+                alt="TODO"
+                width={375}
+                height={142}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+            </div>
 
-          <ImageGrid.Item src={brandTurquoiseImage2} alt="feature-2" span={2} />
-          <ImageGrid.Item src={brandTurquoiseImage3} alt="feature-3" span={4} />
+            <div className="flex flex-col gap-16">
+              <Image
+                src={brandTurquoiseImage2}
+                alt="TODO"
+                width={375}
+                height={229}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+              <Image
+                src={brandTurquoiseImage3}
+                alt="TODO"
+                width={375}
+                height={812}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+            </div>
 
-          <ImageGrid.Item src={brandTurquoiseImage4} alt="feature-4" span={3} />
-          <ImageGrid.Item src={brandTurquoiseImage5} alt="feature-5" span={3} />
-        </ImageGrid>
-      </SectionLarge>
+            <div className="flex flex-col gap-16">
+              <Image
+                src={brandTurquoiseImage4}
+                alt="TODO"
+                width={375}
+                height={360}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+              <Image
+                src={brandTurquoiseImage5}
+                alt="TODO"
+                width={375}
+                height={304}
+                className="rounded-3xl border-4 border-customisation-turquoise/5"
+              />
+            </div>
+          </div>
+        </SectionLarge>
+      </div>
 
-      <SectionDesktopScreenshot
-        title="Share your community"
-        description="Using web URLs that can be posted on Web2 social media. User doesn’t have Status? Open in browser."
-        image={screenshot}
-        icon="pizza"
-        dark
-      />
-
-      {/* FULL PAGE SCREENSHOT */}
+      <div className="relative z-10 -mt-44 bg-neutral-95">
+        <SectionDesktopScreenshot
+          title="Share your community"
+          description="Using web URLs that can be posted on Web2 social media. User doesn’t have Status? Open in browser."
+          image={screenshot}
+          icon="paperPlane"
+          dark
+        />
+      </div>
 
       <div className="pb-20">
         <Section
@@ -196,7 +238,7 @@ const CreateCommunityPage: Page = () => {
         />
         <Section
           color="turquoise"
-          icon="cog"
+          icon="box"
           title="Import from Discord"
           explanation="TODO"
           description="Does your community have an existing Discord server? All message history can be imported into Status."
@@ -217,3 +259,44 @@ CreateCommunityPage.getLayout = function getLayout(page) {
 }
 
 export default CreateCommunityPage
+
+type Props = {
+  icon: Illustration
+  title: string
+  description: string
+  image: StaticImageData
+  dark?: boolean
+}
+export const SectionDesktopScreenshot = (props: Props) => {
+  const { icon, title, description, image, dark } = props
+  const illustration = illustrations[icon]
+  return (
+    <div>
+      <div className="container py-20">
+        <div className="max-w-[462px]">
+          <Image
+            src={illustration.src}
+            alt={illustration.alt}
+            width={48}
+            height={48}
+          />
+          <div className="flex flex-col pt-4">
+            <Text size={27} weight="semibold" color={dark ? '$white-100' : ''}>
+              {title}
+            </Text>
+            <div className="relative flex pt-1">
+              <Text size={27} color={dark ? '$white-100' : ''}>
+                {description}
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto max-w-[1504px] px-10 pb-20">
+        <div className="w-full overflow-hidden rounded-4xl border-4 border-customisation-turquoise/5">
+          <Image src={image} alt={title} width={1424} height={946} />
+        </div>
+      </div>
+    </div>
+  )
+}

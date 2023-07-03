@@ -17,9 +17,14 @@ type Props = {
   secondaryTitle: string
   secondaryDescription: string
   secondaryExplanation?: string
-  image: StaticImageData
+  image?: StaticImageData
+  video?: {
+    webm: string
+    mp4: string
+    poster: string
+  }
   imageAlt: string
-  customNode?: React.ReactNode
+  secondarySlot?: React.ReactNode
   color: 'yellow' | 'turquoise' | 'purple' // | 'none'
   reverse?: boolean
   dark?: boolean
@@ -39,6 +44,7 @@ const Section = (props: Props) => {
     secondaryExplanation,
     reverse,
     dark = false,
+    video,
   } = props
 
   const illustration = illustrations[icon]
@@ -105,15 +111,22 @@ const Section = (props: Props) => {
                   </Text>
                 </div>
 
-                {props.customNode && (
-                  <div className="mt-4 flex flex-col">{props.customNode}</div>
+                {props.secondarySlot && (
+                  <div className="mt-4 flex flex-col">
+                    {props.secondarySlot}
+                  </div>
                 )}
               </div>
             </div>
           </div>
 
           <div className="flex flex-1 justify-center overflow-hidden rounded-[32px]">
-            <ScreenshotImage image={image} alt={imageAlt} color={color} />
+            <ScreenshotImage
+              image={image}
+              video={video}
+              alt={imageAlt}
+              color={color}
+            />
           </div>
         </div>
       </div>

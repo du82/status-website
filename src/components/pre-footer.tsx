@@ -1,9 +1,9 @@
-import { Button, Text } from '@status-im/components'
-import { DownloadIcon } from '@status-im/icons'
+import { Text } from '@status-im/components'
 import Image from 'next/image'
 
 import logoSrc from '../../public/images/logo/default.svg'
 import { ComingSoon } from './coming-soon'
+import { CTAButton } from './cta-button'
 
 const Prefooter = () => {
   return (
@@ -21,13 +21,7 @@ const Prefooter = () => {
           </span>
           <div className="relative flex flex-col justify-center pt-8">
             <div className="inline-flex justify-center">
-              <Button
-                size={40}
-                icon={<DownloadIcon size={20} />}
-                variant="yellow"
-              >
-                Sign up for early access
-              </Button>
+              <CTAButton />
             </div>
             <div className="relative max-w-xs pt-4 text-center leading-3">
               <Text size={11} color={'$neutral-40'}>

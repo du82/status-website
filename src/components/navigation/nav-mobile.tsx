@@ -1,11 +1,12 @@
 import { useState } from 'react'
 
-import { Button, IconButton } from '@status-im/components'
-import { CloseIcon, DownloadIcon, MenuIcon } from '@status-im/icons'
+import { IconButton } from '@status-im/components'
+import { CloseIcon, MenuIcon } from '@status-im/icons'
 
 import { Logo } from '@/components/logo'
 import { useLockScroll } from '@/hooks/use-lock-scroll'
 
+import { CTAButton } from '../cta-button'
 import { Link } from '../link'
 import { AccordionMenu } from './accordion-menu'
 
@@ -50,14 +51,7 @@ const NavMobile = () => {
       >
         <AccordionMenu />
         <div className="flex justify-center py-3">
-          <Button
-            size={40}
-            variant="grey"
-            icon={<DownloadIcon size={20} />}
-            fullWidth
-          >
-            Sign up for early access
-          </Button>
+          <CTAButton variant="grey" fullWidth />
         </div>
       </div>
     </div>

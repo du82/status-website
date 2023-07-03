@@ -3,31 +3,31 @@ import illustartionHandsDesktop from '@assets/wallet/illustration-hands-desktop.
 import { Text } from '@status-im/components'
 import Image from 'next/image'
 
-// import illustartionHandsMobile from '@assets/wallet/illustration-hands-mobile.png'
 import { illustrations } from '@/config/illustrations'
 
 const HandsSection = () => {
   return (
-    <div className="relative bg-[url('/assets/wallet/background-pattern.png')] bg-[length:100%_100%] bg-no-repeat py-[322px]">
-      <div className="mx-40 mb-24">
-        <div className="flex flex-col items-center justify-center">
-          <h2 className="max-w-[600px] py-4 pb-5 text-center text-64">
-            Take control
-            <br />
-            of your crypto
-          </h2>
-          <span className="max-w-xl text-center font-bold">
-            <Text size={27}>
-              No one (including Status!) has the power to freeze, lock-out or
-              stop a Status user from accessing and transacting their tokens.
-            </Text>
-          </span>
-        </div>
+    <div className="relative bg-[url('/assets/wallet/background-pattern.png')] bg-[length:100%_100%] bg-no-repeat pb-40 ">
+      <div className="relative grid aspect-[1.65] place-content-center">
+        <Image src={illustartionHandsDesktop} alt="hands" fill />
+
+        <h2 className="max-w-[600px] py-4 pb-5 text-center text-64">
+          Take control
+          <br />
+          of your crypto
+        </h2>
+        <span className="max-w-xl text-center font-bold">
+          <Text size={27}>
+            No one (including Status!) has the power to freeze, lock-out or stop
+            a Status user from accessing and transacting their tokens.
+          </Text>
+        </span>
       </div>
-      <div className="relative z-[2] flex justify-center pt-[320px]">
+
+      <div className="relative z-[2] flex justify-center gap-5 pt-20">
         {[
           {
-            icon: illustrations.skull,
+            icon: illustrations.ether,
             title: 'Ethereum based assets',
             description:
               'We support all assets in the Uniswap Labs default tokenlist and those minted by communities using Status.',
@@ -41,15 +41,16 @@ const HandsSection = () => {
         ].map(item => (
           <div
             key={item.title}
-            className="mr-24 flex max-w-[381px] flex-col items-center"
+            className="flex max-w-[460px] flex-col items-center px-10"
           >
             <Image
               src={item.icon.src}
               alt={item.icon.alt}
               width={48}
               height={48}
+              className="pb-4"
             />
-            <div className="flex flex-col items-center pt-4 text-center">
+            <div className="flex flex-col items-center gap-1 text-center">
               <Text size={27} weight="semibold">
                 Ethereum based assets
               </Text>
@@ -61,11 +62,7 @@ const HandsSection = () => {
           </div>
         ))}
       </div>
-      <Image
-        src={illustartionHandsDesktop}
-        alt="hands"
-        className="absolute left-0 top-0 w-full"
-      />
+
       <Image
         src={gentlemanImage}
         alt="gentleman"

@@ -1,10 +1,11 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import { Button, Text } from '@status-im/components'
-import { DownloadIcon, ExternalIcon } from '@status-im/icons'
+import { Text } from '@status-im/components'
+import { ExternalIcon } from '@status-im/icons'
 import { cx } from 'class-variance-authority'
 
 import { ROUTES } from '@/config/routes'
 
+import { CTAButton } from '../cta-button'
 import { Link } from '../link'
 import { Logo } from '../logo'
 
@@ -31,7 +32,7 @@ const FloatingDesktop = (props: Props) => {
         <NavigationMenu.List className="flex items-center pl-5">
           {Object.entries(ROUTES).map(([name, links]) => (
             <NavigationMenu.Item key={name}>
-              <NavigationMenu.Trigger className="pr-5 aria-expanded:opacity-50">
+              <NavigationMenu.Trigger className="pr-5 transition-opacity aria-expanded:opacity-50">
                 <Text size={15} weight="medium" color="$white-100">
                   {name}
                 </Text>
@@ -39,7 +40,7 @@ const FloatingDesktop = (props: Props) => {
 
               <NavigationMenu.Content
                 className={cx([
-                  'grid gap-3 pb-12 pl-[60px] pt-6',
+                  'grid pb-12 pl-[60px]',
                   'data-[state=open]:animate-in',
                   'fade-out-20 data-[state=closed]:animate-out',
                 ])}
@@ -50,7 +51,7 @@ const FloatingDesktop = (props: Props) => {
                     <NavigationMenu.Link key={link.name} asChild>
                       <Link
                         href={link.href}
-                        className="flex items-center gap-1"
+                        className="flex items-center gap-1 pt-3 transition-opacity hover:opacity-50"
                       >
                         <Text size={27} weight="semibold" color="$white-100">
                           {link.name}
@@ -67,9 +68,7 @@ const FloatingDesktop = (props: Props) => {
           ))}
         </NavigationMenu.List>
 
-        <Button size={32} icon={<DownloadIcon size={20} />}>
-          Sign up for early access
-        </Button>
+        <CTAButton size={32} />
       </div>
 
       <NavigationMenu.Viewport

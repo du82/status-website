@@ -1,37 +1,27 @@
-import { Button, Tag, Text } from '@status-im/components'
-import {
-  CommunitiesIcon,
-  DownloadIcon,
-  MessengerIcon,
-  WalletIcon,
-} from '@status-im/icons'
+import { Tag, Text } from '@status-im/components'
 import { cx } from 'class-variance-authority'
 
-import { GridHero } from './cards'
+import { useFeatureTheme } from '@/hooks/use-feature-theme'
 
-import type { IconProps } from '@status-im/icons'
+import { GridHero } from './cards'
+import { CTAButton } from './cta-button'
+
+import type { FeatureType } from '@/hooks/use-feature-theme'
 import type { StaticImageData } from 'next/image'
-import type { ComponentType } from 'react'
 
 type Props = {
-  type: 'Communities' | 'Create Community' | 'Wallet' | 'Messenger'
+  type: FeatureType
   title: string
   description: string
-  color: 'yellow' | 'turquoise' | 'purple'
   images: [StaticImageData, StaticImageData, StaticImageData, StaticImageData]
   maxWidth: number
   dark?: boolean
 }
 
-const icons: Record<Props['type'], ComponentType<IconProps>> = {
-  Wallet: WalletIcon,
-  Communities: CommunitiesIcon,
-  'Create Community': CommunitiesIcon,
-  Messenger: MessengerIcon,
-}
-
 export const Hero = (props: Props) => {
-  const { type, title, description, color, images, maxWidth, dark } = props
+  const { type, title, description, images, maxWidth, dark } = props
+
+  const theme = useFeatureTheme(type)!
 
   return (
     <div className="flex w-full flex-col items-center">
@@ -44,9 +34,9 @@ export const Hero = (props: Props) => {
           <div className="inline-flex">
             <Tag
               size={32}
-              icon={icons[type]}
-              color={`$${color}-50`}
-              label={type}
+              label={theme.label}
+              color={theme.token}
+              icon={theme.Icon}
             />
           </div>
           <h1
@@ -66,15 +56,13 @@ export const Hero = (props: Props) => {
 
         <div className="relative flex justify-center">
           <div className="mt-6 inline-flex rounded-[20px] border border-dashed border-neutral-80/20 p-2 lg:mt-8">
-            <Button size={40} icon={<DownloadIcon size={20} />} variant={color}>
-              Sign up for early access
-            </Button>
+            <CTAButton />
           </div>
         </div>
       </div>
 
       <GridHero
-        color={color}
+        color={theme.color as any}
         cardOne={{
           alt: 'wallet-1',
           image: images[0],

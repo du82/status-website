@@ -25,7 +25,7 @@ const AccordionTitlesSection = (props: Props) => {
   const selected = items.find(item => item.title === value)
 
   return (
-    <div className="container flex justify-center py-12 lg:py-20">
+    <div className="container flex justify-center">
       <div
         className={cx([
           'flex flex-col gap-12 lg:flex-row lg:items-center xl:gap-[140px]',
@@ -44,13 +44,17 @@ const AccordionTitlesSection = (props: Props) => {
                   <div className="flex items-center justify-between">
                     <div className="flex min-w-max items-center gap-3">
                       <div className="flex items-center justify-center">
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          height={48}
-                          width={48}
-                          className="hidden xl:block"
-                        />
+                        {selected?.title === item.title ? (
+                          <Image
+                            src={item.icon}
+                            alt={item.title}
+                            height={48}
+                            width={48}
+                            className="hidden xl:block"
+                          />
+                        ) : (
+                          <div className="w-[48px]" />
+                        )}
 
                         <p className="text-27 font-semibold lg:text-40 lg:font-bold xl:pl-5">
                           {item.title}

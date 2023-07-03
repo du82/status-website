@@ -1,9 +1,7 @@
-import {
-  GithubIcon,
-  StatusIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from '@status-im/icons'
+import gitHubIcon from '@images/social/github.svg'
+import statusIcon from '@images/social/status.svg'
+import twitterIcon from '@images/social/twitter.svg'
+import youTubeIcon from '@images/social/youtube.svg'
 
 export const ROUTES = {
   Features: [
@@ -13,16 +11,16 @@ export const ROUTES = {
     { name: 'Wallet', href: '/features/wallet' },
   ],
   Platforms: [
-    { name: 'Mobile', href: '/platforms/mobile' },
-    { name: 'Desktop', href: '/platforms/desktop' },
-    { name: 'Web', href: '/platforms/web' },
+    { name: 'Mobile', href: '/' },
+    { name: 'Desktop', href: '/' },
+    { name: 'Web', href: '/' },
     { name: 'Keycard', href: '/keycard' },
   ],
-  About: [
+  Organization: [
     { name: 'Mission', href: '/' },
     { name: 'Principles', href: '/' },
-    { name: 'Team', href: '/' },
     { name: 'Brand', href: '/brand' },
+    { name: 'Jobs', href: '/jobs' },
   ],
   Help: [
     { name: 'Overview', href: '/help' },
@@ -33,48 +31,52 @@ export const ROUTES = {
     { name: 'Profile', href: '/help/your-profile-and-preferences' },
   ],
   Collaborate: [
-    { name: 'Discuss', href: '/' },
-    { name: 'Feature upvote', href: '/' },
+    {
+      name: 'Discuss',
+      href: 'https://discuss.status.im',
+    },
+    {
+      name: 'Feature upvote',
+      href: 'https://status-desktop.featureupvote.com',
+    },
     { name: 'Blog', href: '/blog' },
     { name: 'Translations', href: '/' },
     // { name: 'Community groups', href: '/' },
-    { name: 'Jobs', href: '/jobs' },
   ],
   Developers: [
     { name: 'Repos', href: 'https://github.com/status-im' },
     { name: 'Insights', href: '/insights/epics' },
-    { name: 'Integrations', href: '/' },
+    { name: 'Specs', href: '/' },
   ],
   SNT: [
-    // { name: 'Token', href: '/' },
-    { name: 'Governance', href: '/' },
+    { name: 'Token', href: '/' },
+    { name: 'Governance', href: 'https://snapshot.org' },
     { name: 'Curate', href: 'https://curate.status.app' },
-    // { name: 'Exchanges', href: '/' },
+    { name: 'Exchanges', href: '/' },
   ],
 } as const
 
-// TODO Update icons when available
 export const SOCIALS = {
   status: {
     name: 'Status',
     href: 'TODO',
-    icon: StatusIcon,
+    src: statusIcon,
   },
   twitter: {
     name: 'Twitter',
     href: 'https://twitter.com/ethstatus',
-    icon: TwitterIcon,
-  },
-  github: {
-    name: 'GitHub',
-    href: 'https://github.com/status-im',
-    icon: GithubIcon,
+    src: twitterIcon,
   },
   youtube: {
     name: 'YouTube',
     href: 'https://youtube.com/<TODO>',
-    icon: YoutubeIcon,
+    src: youTubeIcon,
   },
-}
+  github: {
+    name: 'GitHub',
+    href: 'https://github.com/status-im',
+    src: gitHubIcon,
+  },
+} as const
 
 export type Routes = (typeof ROUTES)[keyof typeof ROUTES]

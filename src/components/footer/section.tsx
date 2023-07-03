@@ -1,4 +1,5 @@
 import { Text } from '@status-im/components'
+import { ExternalIcon } from '@status-im/icons'
 import { cva } from 'class-variance-authority'
 
 import { Link } from '../link'
@@ -61,15 +62,25 @@ const Section = (props: Props) => {
           {title}
         </Text>
         <ul className="grid gap-1">
-          {routes.map(route => (
-            <li key={route.name}>
-              <Link href={route.href}>
-                <Text size={15} color="$white-100" weight="medium">
-                  {route.name}
-                </Text>
-              </Link>
-            </li>
-          ))}
+          {routes.map(route => {
+            const external = route.href.startsWith('http')
+            return (
+              <li key={route.name}>
+                <Link href={route.href} className="group flex items-center">
+                  <Text size={15} color="$white-100" weight="medium">
+                    {route.name}
+                  </Text>
+                  {external && (
+                    <ExternalIcon
+                      size={16}
+                      color="$neutral-40"
+                      className="transition-transform group-hover:translate-x-[2px] group-hover:translate-y-[-2px]"
+                    />
+                  )}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </div>
