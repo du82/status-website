@@ -3266,10 +3266,10 @@
   resolved "https://registry.yarnpkg.com/@status-im/colors/-/colors-0.2.0.tgz#a87d2bfd219db0c7c3d75a84b177665a02969a38"
   integrity sha512-afWM82aOg1lcRUnG/crU+tLDQ6TEH9g3vmC98CSNeiq1Tbm2iNmDfV/Ddsy1hp02lw+mVQUM+WErufqtzhR4Dg==
 
-"@status-im/components@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@status-im/components/-/components-0.2.5.tgz#f3a015575053ba3dcf75a777e253ab1de96b51c3"
-  integrity sha512-WSPpzs7VlwBHKdKVEZhr+8vO7k7UJbx2kDJ/vOMXeePzkX04QS6e2WAT//jv1itOECD/KguZZKB//wATkNrWVA==
+"@status-im/components@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@status-im/components/-/components-0.2.6.tgz#758d4061ff1ac6fb7ea2dbfab5c01f8d34038cd3"
+  integrity sha512-ie+XUeDFRzKxrlYZDLbcY9Wihw8frZnSyuN6r1Fc0SYhjYG3IRMS3LnOo0aWw1NKLseDW3QRtoKQA/E/BtSrug==
   dependencies:
     "@radix-ui/react-accordion" "^1.1.1"
     "@radix-ui/react-checkbox" "^1.0.4"
@@ -3325,10 +3325,10 @@
     "@tamagui/web" "1.36.4"
     tamagui "1.36.4"
 
-"@status-im/icons@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@status-im/icons/-/icons-0.2.1.tgz#f4dd4509ab63e56c366513c4cd832785eae2fd88"
-  integrity sha512-nGt59yZ5SArSjuIHYwK9RNog6w9APQZQciMhZzX2sPiKAjr8iuSF+AbcCQitaILh/uscHiGAfkAyPKR/KcudyA==
+"@status-im/icons@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@status-im/icons/-/icons-0.2.2.tgz#bcb64d7b32b25e9b0e3971c9a862352ea56fe7f3"
+  integrity sha512-ZMvpe0SEHQ+iHjF+F5pWMCK96YKBTSer+2NcuZzRe0zjgQNdThMnyPf6HwN50NfLMEEAVHbn/9l0YvSI0GpjaQ==
   dependencies:
     "@tamagui/core" "1.36.4"
     "@tamagui/web" "1.36.4"
