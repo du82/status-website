@@ -1,9 +1,9 @@
-import keycardImage from '@assets/homepage/illustration-keycard.png'
 import sectionImage1 from '@assets/wallet/section-01.png'
 import { Button, Tag, Text } from '@status-im/components'
 import { KeycardIcon, PlayIcon } from '@status-im/icons'
 import Image from 'next/image'
 
+import { Video } from '@/components'
 import { Section } from '@/components/cards'
 import { FeatureList } from '@/components/feature-list'
 import { VideoSection } from '@/components/video-section'
@@ -17,11 +17,10 @@ const KeycardPage: Page = () => {
   return (
     <Content>
       <div className="relative grid grid-cols-2 items-center gap-[140px] overflow-hidden py-40">
-        <Image
-          src={keycardImage}
-          alt="Hand holding a green keycard"
-          width={742}
-          height={720}
+        <Video
+          poster="/assets/homepage/keycard-preview.png"
+          videoMp4="/assets/homepage/keycard.mp4"
+          videoWebm="/assets/homepage/keycard.webm"
         />
 
         <div className="grid max-w-[518px]">
@@ -60,6 +59,9 @@ const KeycardPage: Page = () => {
       <VideoSection
         title="Fully integrated with Status"
         description="Get offline private key management, transaction authorization, and two-factor authentication."
+        poster="/assets/messenger/notifications-preview.png"
+        videoMp4="/assets/messenger/notifications.mp4"
+        videoWebm="/assets/messenger/notifications.webm"
       />
 
       <div className="pb-20">
