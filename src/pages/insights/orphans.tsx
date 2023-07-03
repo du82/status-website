@@ -7,39 +7,23 @@ import { TableIssues } from '@/components'
 import { useDebounce } from '@/hooks/use-debounce'
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer'
 import { InsightsLayout } from '@/layouts/insights-layout'
-import {
-  GET_EPIC_LINKS,
-  GET_FILTERS_FOR_ORPHANS,
-  GET_ORPHANS,
-  GET_ORPHANS_COUNT,
-} from '@/lib/burnup'
+import { GET_ORPHANS } from '@/lib/burnup'
 import { api } from '@/lib/graphql'
-import { useGetOrphansCountQuery } from '@/lib/graphql/generated/hooks'
+import {
+  useGetFiltersForOrphansQuery,
+  useGetOrphansCountQuery,
+} from '@/lib/graphql/generated/hooks'
 import { Order_By } from '@/lib/graphql/generated/schemas'
 
 import type {
-  GetEpicMenuLinksQuery,
-  GetEpicMenuLinksQueryVariables,
-  GetFiltersForOrphansQuery,
-  GetFiltersForOrphansQueryVariables,
-  GetOrphansCountQuery,
-  GetOrphansCountQueryVariables,
   GetOrphansQuery,
   GetOrphansQueryVariables,
 } from '@/lib/graphql/generated/operations'
 import type { Page } from 'next'
 
-type Props = {
-  orphans: GetOrphansQuery
-  filters: GetFiltersForOrphansQuery
-  links: string[]
-}
-
 const LIMIT = 50
 
-const OrphansPage: Page<Props> = props => {
-  const { links } = props
-
+const OrphansPage: Page = () => {
   const [activeTab, setActiveTab] = useState<'open' | 'closed'>('open')
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([])
   const [selectedAssignees, setSelectedAssignees] = useState<string[]>([])
@@ -96,6 +80,8 @@ const OrphansPage: Page<Props> = props => {
       }
     )
 
+  const { data: filters } = useGetFiltersForOrphansQuery()
+
   const { data: dataCounter } = useGetOrphansCountQuery({
     where: {
       ...(selectedAuthors.length > 0 && {
@@ -136,7 +122,7 @@ const OrphansPage: Page<Props> = props => {
   }, [fetchNextPage, hasNextPage, isFetchingNextPage, isVisible])
 
   return (
-    <InsightsLayout links={links}>
+    <InsightsLayout>
       <div className="space-y-6 scroll-smooth p-10">
         <Text size={27} weight="semibold">
           Orphans
@@ -145,9 +131,9 @@ const OrphansPage: Page<Props> = props => {
           data={orphans}
           count={count}
           isLoading={isFetchingNextPage || isFetching || hasNextPage}
-          filters={props.filters}
           handleTabChange={setActiveTab}
           activeTab={activeTab}
+          filters={filters}
           selectedAuthors={selectedAuthors}
           handleSelectedAuthors={setSelectedAuthors}
           selectedAssignees={selectedAssignees}
@@ -163,43 +149,6 @@ const OrphansPage: Page<Props> = props => {
       </div>
     </InsightsLayout>
   )
-}
-
-export async function getServerSideProps() {
-  const [links, repos, filters, resultIssuesCount] = await Promise.all([
-    api<GetEpicMenuLinksQuery, GetEpicMenuLinksQueryVariables>(GET_EPIC_LINKS),
-    api<GetOrphansQuery, GetOrphansQueryVariables>(GET_ORPHANS, {
-      where: {
-        stage: { _eq: 'open' },
-      },
-      limit: LIMIT,
-      offset: 0,
-      orderBy: Order_By.Desc,
-    }),
-    api<GetFiltersForOrphansQuery, GetFiltersForOrphansQueryVariables>(
-      GET_FILTERS_FOR_ORPHANS
-    ),
-    api<GetOrphansCountQuery, GetOrphansCountQueryVariables>(
-      GET_ORPHANS_COUNT,
-      {
-        where: {
-          stage: { _eq: 'open' },
-        },
-      }
-    ),
-  ])
-
-  return {
-    props: {
-      links:
-        links?.gh_epics
-          .filter(epic => epic.status === 'In Progress')
-          .map(epic => epic.epic_name) || [],
-      repos: repos.gh_orphans || [],
-      filters,
-      count: resultIssuesCount,
-    },
-  }
 }
 
 export default OrphansPage

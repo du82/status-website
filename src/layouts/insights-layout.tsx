@@ -1,3 +1,5 @@
+import { useGetEpicMenuLinksQuery } from '@/lib/graphql/generated/hooks'
+
 import { SidebarMenu } from '../components'
 import { AppLayout } from './app-layout'
 
@@ -14,15 +16,18 @@ const STATIC_LINKS = [
 
 interface InsightsLayoutProps {
   children: React.ReactNode
-  links: string[]
 }
 
-export const InsightsLayout: React.FC<InsightsLayoutProps> = ({
-  children,
-  links: linksFromProps,
-}) => {
+export const InsightsLayout: React.FC<InsightsLayoutProps> = ({ children }) => {
+  const { data, isLoading } = useGetEpicMenuLinksQuery()
+
+  const linksFromQuery =
+    data?.gh_epics
+      .filter(epic => epic.status === 'In Progress')
+      .map(epic => epic.epic_name) || []
+
   const epicLinks =
-    linksFromProps?.map(epic => {
+    linksFromQuery?.map(epic => {
       return {
         label: epic || '',
         href: `/insights/epics/${epic}`,
@@ -46,7 +51,7 @@ export const InsightsLayout: React.FC<InsightsLayoutProps> = ({
   return (
     <AppLayout hasPreFooter={false}>
       <div className="relative flex min-h-[calc(100vh-56px-4px)] w-full rounded-3xl bg-white-100">
-        {<SidebarMenu items={links} />}
+        {<SidebarMenu items={links} isLoading={isLoading} />}
         <main className="flex-1 pb-8">{children}</main>
       </div>
     </AppLayout>

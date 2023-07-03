@@ -4,16 +4,9 @@ import { OpenIcon, UnlockedIcon } from '@status-im/icons'
 import { Link } from '@/components/link'
 import { LoadingSkeleton } from '@/components/repos/loading-skeleton'
 import { InsightsLayout } from '@/layouts/insights-layout'
-import { GET_EPIC_LINKS, GET_REPOS } from '@/lib/burnup'
-import { api } from '@/lib/graphql'
 import { useGetRepositoriesQuery } from '@/lib/graphql/generated/hooks'
 
-import type {
-  GetEpicMenuLinksQuery,
-  GetEpicMenuLinksQueryVariables,
-  GetRepositoriesQuery,
-  GetRepositoriesQueryVariables,
-} from '@/lib/graphql/generated/operations'
+import type { GetRepositoriesQuery } from '@/lib/graphql/generated/operations'
 import type { Page } from 'next'
 
 type Props = {
@@ -30,13 +23,17 @@ const ReposPage: Page<Props> = props => {
   })
 
   if (isLoading) {
-    return <LoadingSkeleton />
+    return (
+      <InsightsLayout>
+        <LoadingSkeleton />
+      </InsightsLayout>
+    )
   }
 
   const repos = data?.gh_repositories || []
 
   return (
-    <InsightsLayout links={props.links}>
+    <InsightsLayout>
       <div className="p-10">
         <div className="mb-6">
           <Text size={27} weight="semibold">
@@ -112,28 +109,6 @@ const ReposPage: Page<Props> = props => {
       </div>
     </InsightsLayout>
   )
-}
-
-export async function getServerSideProps() {
-  const result = await api<GetRepositoriesQuery, GetRepositoriesQueryVariables>(
-    GET_REPOS,
-    undefined
-  )
-
-  const links = await api<
-    GetEpicMenuLinksQuery,
-    GetEpicMenuLinksQueryVariables
-  >(GET_EPIC_LINKS)
-
-  return {
-    props: {
-      links:
-        links?.gh_epics
-          .filter(epic => epic.status === 'In Progress')
-          .map(epic => epic.epic_name) || [],
-      repos: result.gh_repositories || [],
-    },
-  }
 }
 
 export default ReposPage

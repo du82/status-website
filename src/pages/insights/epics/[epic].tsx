@@ -8,36 +8,24 @@ import { Breadcrumbs, EpicOverview, TableIssues } from '@/components'
 import { useDebounce } from '@/hooks/use-debounce'
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer'
 import { InsightsLayout } from '@/layouts/insights-layout'
-import {
-  GET_EPIC_ISSUES_COUNT,
-  GET_EPIC_LINKS,
-  GET_FILTERS_WITH_EPIC,
-  GET_ISSUES_BY_EPIC,
-} from '@/lib/burnup'
+import { GET_ISSUES_BY_EPIC } from '@/lib/burnup'
 import { api } from '@/lib/graphql'
 import {
   useGetBurnupQuery,
   useGetEpicIssuesCountQuery,
+  useGetEpicMenuLinksQuery,
   useGetFiltersWithEpicQuery,
 } from '@/lib/graphql/generated/hooks'
 import { Order_By } from '@/lib/graphql/generated/schemas'
 
-import type { BreadcrumbsProps } from '@/components/breadcrumbs'
 import type {
   GetBurnupQuery,
-  GetEpicIssuesCountQuery,
-  GetEpicIssuesCountQueryVariables,
-  GetEpicMenuLinksQuery,
-  GetEpicMenuLinksQueryVariables,
-  GetFiltersWithEpicQuery,
-  GetFiltersWithEpicQueryVariables,
   GetIssuesByEpicQuery,
   GetIssuesByEpicQueryVariables,
 } from '@/lib/graphql/generated/operations'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import type { DateRange } from '@status-im/components'
-import type { GetServerSidePropsContext, Page } from 'next'
 
 type Epic = {
   title: string
@@ -45,26 +33,17 @@ type Epic = {
   description: string
 }
 
-type Props = {
-  links: string[]
-  epic: Epic
-  breadcrumbs: BreadcrumbsProps['items']
-  count: GetEpicIssuesCountQuery
-  filters: GetFiltersWithEpicQuery
-  initialDates: {
-    from: string
-    to: string
-  }
-}
-
 const LIMIT = 10
 
-const EpicsDetailPage: Page<Props> = props => {
+const INITIAL_DATES = {
+  from: '2017-01-01',
+  to: format(new Date(), 'yyyy-MM-dd'),
+}
+
+const EpicsDetailPage = () => {
   const router = useRouter()
 
   const { epic: epicName } = router.query
-
-  const { epic, breadcrumbs, links, initialDates } = props
 
   const [activeTab, setActiveTab] = useState<'open' | 'closed'>('open')
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([])
@@ -78,11 +57,37 @@ const EpicsDetailPage: Page<Props> = props => {
   const [selectedDates, setSelectedDates] = useState<DateRange>()
   const [burnupData, setBurnupData] = useState<GetBurnupQuery['gh_burnup']>()
 
+  const { data: epicLinks, isLoading } = useGetEpicMenuLinksQuery(
+    {
+      where: {
+        epic_name: { _eq: epicName as string },
+      },
+    },
+    {
+      enabled: !!epicName,
+    }
+  )
+
+  const epicLinkExists = epicLinks?.gh_epics.find(
+    link => link.epic_name === epicName
+  )
+
+  const breadcrumbs = [
+    {
+      label: 'Epics',
+      href: '/insights/epics',
+    },
+    {
+      label: epicName as string,
+      href: `/insights/epics/${epicName}`,
+    },
+  ]
+
   const { isFetching: isLoadingBurnup } = useGetBurnupQuery(
     {
       epicNames: epicName,
-      from: selectedDates?.from || initialDates.from,
-      to: selectedDates?.to || initialDates.to,
+      from: selectedDates?.from || INITIAL_DATES.from,
+      to: selectedDates?.to || INITIAL_DATES.to,
     },
     {
       // Prevent animation if we go out of the page
@@ -215,14 +220,9 @@ const EpicsDetailPage: Page<Props> = props => {
       }
     )
 
-  const { data: filters } = useGetFiltersWithEpicQuery(
-    {
-      epicName: epicName as string,
-    },
-    {
-      initialData: props.filters,
-    }
-  )
+  const { data: filters } = useGetFiltersWithEpicQuery({
+    epicName: epicName as string,
+  })
 
   const issues = useMemo(
     () => data?.pages.flatMap(page => page) || [],
@@ -241,8 +241,22 @@ const EpicsDetailPage: Page<Props> = props => {
     }
   }, [fetchNextPage, hasNextPage, isFetchingNextPage, isVisible])
 
+  useEffect(() => {
+    if (!epicLinkExists && !isLoading) {
+      router.push('/insights/epics')
+    }
+  }, [epicLinkExists, router, isLoading])
+
+  const epic: Epic = {
+    title: String(epicName) || '-',
+    description: epicLinkExists?.epic_description || '',
+    color: epicLinkExists?.epic_color
+      ? `#${epicLinkExists.epic_color}`
+      : '#4360df',
+  }
+
   return (
-    <InsightsLayout links={links}>
+    <InsightsLayout>
       <Breadcrumbs items={breadcrumbs} />
       <div className="px-10 py-6">
         <EpicOverview
@@ -282,73 +296,3 @@ const EpicsDetailPage: Page<Props> = props => {
 }
 
 export default EpicsDetailPage
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { epic } = context.query
-
-  const links = await api<
-    GetEpicMenuLinksQuery,
-    GetEpicMenuLinksQueryVariables
-  >(GET_EPIC_LINKS)
-
-  const epicLinkExists = links?.gh_epics.find(link => link.epic_name === epic)
-
-  if (!epicLinkExists) {
-    return {
-      redirect: { destination: '/insights/epics', permanent: false },
-    }
-  }
-
-  // TODO: get initial date based on the epic when available
-  const initialDates = {
-    from: '2017-01-01',
-    to: format(new Date(), 'yyyy-MM-dd'),
-  }
-
-  const [resultIssuesCount, resultFilters] = await Promise.all([
-    api<GetEpicIssuesCountQuery, GetEpicIssuesCountQueryVariables>(
-      GET_EPIC_ISSUES_COUNT,
-      {
-        where: {
-          epic_name: { _eq: String(epic) },
-        },
-      }
-    ),
-    api<GetFiltersWithEpicQuery, GetFiltersWithEpicQueryVariables>(
-      GET_FILTERS_WITH_EPIC,
-      {
-        epicName: String(epic),
-      }
-    ),
-  ])
-
-  return {
-    props: {
-      links:
-        links?.gh_epics
-          .filter(epic => epic.status === 'In Progress')
-          .map(epic => epic.epic_name) || [],
-      count: resultIssuesCount?.gh_epic_issues,
-      filters: resultFilters || [],
-      initialDates,
-      epic: {
-        title: String(epic),
-        description: epicLinkExists?.epic_description || '',
-        color: epicLinkExists.epic_color
-          ? `#${epicLinkExists.epic_color}`
-          : '#4360df',
-      },
-      breadcrumbs: [
-        {
-          label: 'Epics',
-          href: '/insights/epics',
-        },
-        {
-          label: epic,
-          href: `/insights/epics/${epic}`,
-        },
-      ],
-      key: epic,
-    },
-  }
-}

@@ -30,10 +30,6 @@ import type {
 import type { DateRange } from '@status-im/components'
 import type { Page } from 'next'
 
-type Props = {
-  links: string[]
-}
-
 const LIMIT = 3
 
 const sortOptions: DropdownSortProps['data'] = [
@@ -47,8 +43,7 @@ const sortOptions: DropdownSortProps['data'] = [
   },
 ]
 
-const EpicsPage: Page<Props> = props => {
-  const { links } = props
+const EpicsPage: Page = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([
     'In Progress',
   ])
@@ -194,7 +189,7 @@ const EpicsPage: Page<Props> = props => {
   }, [fetchNextPage, hasNextPage, isFetchingNextPage, isVisible])
 
   return (
-    <InsightsLayout links={links}>
+    <InsightsLayout>
       <div className="flex h-full flex-1 flex-col justify-between">
         <div className="space-y-4 p-10">
           <Text size={27} weight="semibold">
@@ -291,22 +286,6 @@ const EpicsPage: Page<Props> = props => {
       </div>
     </InsightsLayout>
   )
-}
-
-export async function getServerSideProps() {
-  const epics = await api<
-    GetEpicMenuLinksQuery,
-    GetEpicMenuLinksQueryVariables
-  >(GET_EPIC_LINKS)
-
-  return {
-    props: {
-      links:
-        epics?.gh_epics
-          .filter(epic => epic.status === 'In Progress')
-          .map(epic => epic.epic_name) || [],
-    },
-  }
 }
 
 export default EpicsPage

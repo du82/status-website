@@ -1,4 +1,4 @@
-import { Tag, Text } from '@status-im/components'
+import { Skeleton, Tag, Text } from '@status-im/components'
 import { OpenIcon } from '@status-im/icons'
 
 import { Chart } from './chart/chart'
@@ -61,27 +61,45 @@ export const EpicOverview = (props: Props) => {
   )
 
   return (
-    <div style={{ position: 'relative' }}>
-      <div className="flex justify-between">
-        <div className="flex items-center gap-1">
-          <Text size={fullscreen ? 27 : 19} weight="semibold">
-            {title}
-          </Text>
-          <OpenIcon size={20} />
+    <div className="relative ">
+      {isLoading ? (
+        <div className="flex h-[80px] items-start justify-between">
+          <div className="flex w-52 flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <Skeleton width={123} height={30} />
+              <Skeleton width={20} height={20} />
+            </div>
+            <Skeleton width={80} height={24} />
+          </div>
+          <Skeleton width={335} height={30} />
         </div>
-        {showPicker && (
-          <DatePicker selected={selectedDates} onSelect={setSelectedDates} />
-        )}
-      </div>
-      {Boolean(description) && (
-        <Text size={fullscreen ? 19 : 15} color="$neutral-50">
-          {description}
-        </Text>
-      )}
+      ) : (
+        <>
+          <div className="flex justify-between">
+            <div className="flex items-center gap-1">
+              <Text size={fullscreen ? 27 : 19} weight="semibold">
+                {title}
+              </Text>
+              <OpenIcon size={20} />
+            </div>
+            {showPicker && (
+              <DatePicker
+                selected={selectedDates}
+                onSelect={setSelectedDates}
+              />
+            )}
+          </div>
+          {Boolean(description) && (
+            <Text size={fullscreen ? 19 : 15} color="$neutral-50">
+              {description}
+            </Text>
+          )}
 
-      <div className="flex py-3">
-        <Tag size={24} label={title} color={color} />
-      </div>
+          <div className="flex py-3">
+            <Tag size={24} label={title} color={color} />
+          </div>
+        </>
+      )}
 
       <Chart data={filteredData || []} height={300} isLoading={isLoading} />
 

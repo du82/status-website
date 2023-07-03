@@ -173,7 +173,7 @@ const TableIssues = (props: Props) => {
                     <ActiveMembersIcon size={20} color="$neutral-50" />
                   )}
                 </div>
-                <div className="flex max-w-lg flex-col">
+                <div className="flex max-w-md flex-col">
                   <Text size={15} weight="medium" truncate>
                     {issue.title}
                   </Text>
@@ -198,16 +198,19 @@ const TableIssues = (props: Props) => {
 
                 {'labels' in issue &&
                   issue.labels &&
-                  JSON.parse(issue.labels).map(
-                    (label: { id: string; name: string; color: string }) => (
-                      <Tag
-                        key={label.id}
-                        size={24}
-                        label={label.name}
-                        color={`#${label.color}`}
-                      />
+                  JSON.parse(issue.labels)
+                    .map(
+                      (label: { id: string; name: string; color: string }) => (
+                        <Tag
+                          key={label.id}
+                          size={24}
+                          label={label.name}
+                          color={`#${label.color}`}
+                        />
+                      )
                     )
-                  )}
+                    // TODO: Remove this when the design team solves the problem with the space for the tags
+                    .slice(0, 2)}
                 <Avatar type="user" size={24} name={issue.author || ''} />
               </div>
             </Link>
