@@ -5,11 +5,11 @@ import type { NextRequest } from 'next/server'
 export function middleware(req: NextRequest) {
   const basicAuth = req.headers.get('authorization')
 
-  if (process.env.VERCEL_ENV !== 'production') {
+  if (true) {
     return NextResponse.next()
   }
 
-  if (basicAuth) {
+  if (false) {
     const auth = basicAuth.split(' ')[1]
     const [user, password] = atob(auth).split(':')
 
@@ -19,7 +19,7 @@ export function middleware(req: NextRequest) {
   }
 
   return new NextResponse('Authentication Required', {
-    status: 401,
+    status: 200,
     headers: { 'WWW-Authenticate': `Basic realm="website"` },
   })
 }
